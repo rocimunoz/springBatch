@@ -1,0 +1,671 @@
+08/01/2016 13:43:02 INFO  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2dbae104: startup date [Fri Jan 08 13:43:02 CET 2016]; root of context hierarchy
+08/01/2016 13:43:02 INFO  Loading XML bean definitions from class path resource [META-INF/applicationContext.xml]
+08/01/2016 13:43:02 INFO  Loading XML bean definitions from class path resource [META-INF/applicationDataSources.xml]
+08/01/2016 13:43:03 INFO  Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@74a02b5e: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,jobLauncher,org.springframework.batch.core.scope.internalStepScope,org.springframework.batch.core.scope.internalJobScope,org.springframework.beans.factory.config.CustomEditorConfigurer,org.springframework.batch.core.configuration.xml.CoreNamespacePostProcessor,batch_state_transition_comparator,step1,step2,step3,step4,step5,chunk1,fin,org.springframework.batch.core.configuration.xml.SimpleFlowFactoryBean#0,templateSpring,taskExecutor,TaskStep1,TaskStep2,TaskStep3,TaskStep4,TaskStep5,finTasklet,propertyConfigurer,transactionManager,defaultTxAttributes,jobRepository,JobTransactionManager,jobExplorer]; root of factory hierarchy
+08/01/2016 13:43:03 ERROR ---- Error proceso org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name 'chunk1' defined in null: Could not resolve placeholder 'commitInterval'
+08/01/2016 13:43:52 INFO  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4344a263: startup date [Fri Jan 08 13:43:52 CET 2016]; root of context hierarchy
+08/01/2016 13:43:52 INFO  Loading XML bean definitions from class path resource [META-INF/applicationContext.xml]
+08/01/2016 13:43:53 INFO  Loading XML bean definitions from class path resource [META-INF/applicationDataSources.xml]
+08/01/2016 13:43:53 INFO  Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@74a02b5e: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,jobLauncher,org.springframework.batch.core.scope.internalStepScope,org.springframework.batch.core.scope.internalJobScope,org.springframework.beans.factory.config.CustomEditorConfigurer,org.springframework.batch.core.configuration.xml.CoreNamespacePostProcessor,batch_state_transition_comparator,step1,step2,step3,step4,step5,chunk1,fin,org.springframework.batch.core.configuration.xml.SimpleFlowFactoryBean#0,templateSpring,taskExecutor,TaskStep1,TaskStep2,TaskStep3,TaskStep4,TaskStep5,finTasklet,propertyConfigurer,transactionManager,defaultTxAttributes,jobRepository,JobTransactionManager,jobExplorer]; root of factory hierarchy
+08/01/2016 13:43:53 ERROR ---- Error proceso org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name 'taskExecutor' defined in class path resource [META-INF/applicationContext.xml]: Could not resolve placeholder 'corePoolSize'
+08/01/2016 13:44:56 INFO  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4344a263: startup date [Fri Jan 08 13:44:56 CET 2016]; root of context hierarchy
+08/01/2016 13:44:56 INFO  Loading XML bean definitions from class path resource [META-INF/applicationContext.xml]
+08/01/2016 13:44:57 INFO  Loading XML bean definitions from class path resource [META-INF/applicationDataSources.xml]
+08/01/2016 13:44:57 INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@74a02b5e: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,jobLauncher,org.springframework.batch.core.scope.internalStepScope,org.springframework.batch.core.scope.internalJobScope,org.springframework.beans.factory.config.CustomEditorConfigurer,org.springframework.batch.core.configuration.xml.CoreNamespacePostProcessor,batch_state_transition_comparator,step1,step2,step3,step4,step5,chunk1,fin,org.springframework.batch.core.configuration.xml.SimpleFlowFactoryBean#0,templateSpring,taskExecutor,TaskStep1,TaskStep2,TaskStep3,TaskStep4,TaskStep5,finTasklet,propertyConfigurer,transactionManager,defaultTxAttributes,jobRepository,JobTransactionManager,jobExplorer]; root of factory hierarchy
+08/01/2016 13:44:57 INFO  No TaskExecutor has been set, defaulting to synchronous executor.
+08/01/2016 13:44:57 INFO  Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@74a02b5e: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,jobLauncher,org.springframework.batch.core.scope.internalStepScope,org.springframework.batch.core.scope.internalJobScope,org.springframework.beans.factory.config.CustomEditorConfigurer,org.springframework.batch.core.configuration.xml.CoreNamespacePostProcessor,batch_state_transition_comparator,step1,step2,step3,step4,step5,chunk1,fin,org.springframework.batch.core.configuration.xml.SimpleFlowFactoryBean#0,templateSpring,taskExecutor,TaskStep1,TaskStep2,TaskStep3,TaskStep4,TaskStep5,finTasklet,propertyConfigurer,transactionManager,defaultTxAttributes,jobRepository,JobTransactionManager,jobExplorer]; root of factory hierarchy
+08/01/2016 13:44:57 ERROR ---- Error proceso org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'step1': Cannot resolve reference to bean 'TaskStep1' while setting bean property 'tasklet'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'TaskStep1': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private java.lang.String org.template.negocio.TaskStep1.ip; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'ipFTP'
+08/01/2016 13:46:07 INFO  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2dbae104: startup date [Fri Jan 08 13:46:07 CET 2016]; root of context hierarchy
+08/01/2016 13:46:07 INFO  Loading XML bean definitions from class path resource [META-INF/applicationContext.xml]
+08/01/2016 13:46:07 INFO  Loading XML bean definitions from class path resource [META-INF/applicationDataSources.xml]
+08/01/2016 13:46:07 INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@74a02b5e: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,jobLauncher,org.springframework.batch.core.scope.internalStepScope,org.springframework.batch.core.scope.internalJobScope,org.springframework.beans.factory.config.CustomEditorConfigurer,org.springframework.batch.core.configuration.xml.CoreNamespacePostProcessor,batch_state_transition_comparator,step1,step2,step3,step4,step5,chunk1,fin,org.springframework.batch.core.configuration.xml.SimpleFlowFactoryBean#0,templateSpring,taskExecutor,TaskStep1,TaskStep2,TaskStep3,TaskStep4,TaskStep5,finTasklet,propertyConfigurer,transactionManager,defaultTxAttributes,jobRepository,JobTransactionManager,jobExplorer]; root of factory hierarchy
+08/01/2016 13:46:07 INFO  No TaskExecutor has been set, defaulting to synchronous executor.
+08/01/2016 13:46:07 INFO  Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@74a02b5e: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,jobLauncher,org.springframework.batch.core.scope.internalStepScope,org.springframework.batch.core.scope.internalJobScope,org.springframework.beans.factory.config.CustomEditorConfigurer,org.springframework.batch.core.configuration.xml.CoreNamespacePostProcessor,batch_state_transition_comparator,step1,step2,step3,step4,step5,chunk1,fin,org.springframework.batch.core.configuration.xml.SimpleFlowFactoryBean#0,templateSpring,taskExecutor,TaskStep1,TaskStep2,TaskStep3,TaskStep4,TaskStep5,finTasklet,propertyConfigurer,transactionManager,defaultTxAttributes,jobRepository,JobTransactionManager,jobExplorer]; root of factory hierarchy
+08/01/2016 13:46:07 ERROR ---- Error proceso org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'step1': Cannot resolve reference to bean 'transactionManager' while setting bean property 'transactionManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager' defined in class path resource [META-INF/applicationDataSources.xml]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Property 'dataSource' is required
+08/01/2016 13:56:59 INFO  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4344a263: startup date [Fri Jan 08 13:56:58 CET 2016]; root of context hierarchy
+08/01/2016 13:56:59 INFO  Loading XML bean definitions from class path resource [META-INF/applicationContext.xml]
+08/01/2016 13:56:59 INFO  Loading XML bean definitions from class path resource [META-INF/applicationDataSources.xml]
+08/01/2016 13:56:59 INFO  Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@74a02b5e: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,jobLauncher,org.springframework.batch.core.scope.internalStepScope,org.springframework.batch.core.scope.internalJobScope,org.springframework.beans.factory.config.CustomEditorConfigurer,org.springframework.batch.core.configuration.xml.CoreNamespacePostProcessor,batch_state_transition_comparator,step1,step2,step3,step4,step5,chunk1,fin,org.springframework.batch.core.configuration.xml.SimpleFlowFactoryBean#0,templateSpring,taskExecutor,TaskStep1,TaskStep2,TaskStep3,TaskStep4,TaskStep5,finTasklet,propertyConfigurer,dataSourceTemplate,transactionManager,defaultTxAttributes,jobRepository,JobTransactionManager,jobExplorer]; root of factory hierarchy
+08/01/2016 13:56:59 ERROR ---- Error proceso org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name 'dataSourceTemplate' defined in class path resource [META-INF/applicationDataSources.xml]: Could not resolve placeholder 'driver'
+08/01/2016 14:01:06 INFO  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@480ae510: startup date [Fri Jan 08 14:01:06 CET 2016]; root of context hierarchy
+08/01/2016 14:01:06 INFO  Loading XML bean definitions from class path resource [META-INF/applicationContext.xml]
+08/01/2016 14:01:07 INFO  Loading XML bean definitions from class path resource [META-INF/applicationDataSources.xml]
+08/01/2016 14:01:07 INFO  Loading properties file from class path resource [config/template/SqlMapConfig.properties]
+08/01/2016 14:01:07 INFO  Loading properties file from class path resource [config/template/prj.properties]
+08/01/2016 14:01:07 INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@74a02b5e: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,jobLauncher,org.springframework.batch.core.scope.internalStepScope,org.springframework.batch.core.scope.internalJobScope,org.springframework.beans.factory.config.CustomEditorConfigurer,org.springframework.batch.core.configuration.xml.CoreNamespacePostProcessor,batch_state_transition_comparator,step1,step2,step3,step4,step5,chunk1,fin,org.springframework.batch.core.configuration.xml.SimpleFlowFactoryBean#0,templateSpring,taskExecutor,TaskStep1,TaskStep2,TaskStep3,TaskStep4,TaskStep5,finTasklet,propertyConfigurer,dataSourceTemplate,transactionManager,defaultTxAttributes,jobRepository,JobTransactionManager,jobExplorer]; root of factory hierarchy
+08/01/2016 14:01:07 INFO  No TaskExecutor has been set, defaulting to synchronous executor.
+08/01/2016 14:01:07 INFO  Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@74a02b5e: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,jobLauncher,org.springframework.batch.core.scope.internalStepScope,org.springframework.batch.core.scope.internalJobScope,org.springframework.beans.factory.config.CustomEditorConfigurer,org.springframework.batch.core.configuration.xml.CoreNamespacePostProcessor,batch_state_transition_comparator,step1,step2,step3,step4,step5,chunk1,fin,org.springframework.batch.core.configuration.xml.SimpleFlowFactoryBean#0,templateSpring,taskExecutor,TaskStep1,TaskStep2,TaskStep3,TaskStep4,TaskStep5,finTasklet,propertyConfigurer,dataSourceTemplate,transactionManager,defaultTxAttributes,jobRepository,JobTransactionManager,jobExplorer]; root of factory hierarchy
+08/01/2016 14:01:07 ERROR ---- Error proceso org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'step1': Cannot resolve reference to bean 'transactionManager' while setting bean property 'transactionManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager' defined in class path resource [META-INF/applicationDataSources.xml]: Cannot resolve reference to bean 'dataSourceTemplate' while setting bean property 'dataSource'; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [org.apache.commons.dbcp.BasicDataSource] for bean with name 'dataSourceTemplate' defined in class path resource [META-INF/applicationDataSources.xml]; nested exception is java.lang.ClassNotFoundException: org.apache.commons.dbcp.BasicDataSource
+08/01/2016 14:02:52 INFO  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1db88745: startup date [Fri Jan 08 14:02:52 CET 2016]; root of context hierarchy
+08/01/2016 14:02:52 INFO  Loading XML bean definitions from class path resource [META-INF/applicationContext.xml]
+08/01/2016 14:02:52 INFO  Loading XML bean definitions from class path resource [META-INF/applicationDataSources.xml]
+08/01/2016 14:02:52 INFO  Loading properties file from class path resource [config/template/SqlMapConfig.properties]
+08/01/2016 14:02:52 INFO  Loading properties file from class path resource [config/template/prj.properties]
+08/01/2016 14:02:52 INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4f430ea5: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,jobLauncher,org.springframework.batch.core.scope.internalStepScope,org.springframework.batch.core.scope.internalJobScope,org.springframework.beans.factory.config.CustomEditorConfigurer,org.springframework.batch.core.configuration.xml.CoreNamespacePostProcessor,batch_state_transition_comparator,step1,step2,step3,step4,step5,chunk1,fin,org.springframework.batch.core.configuration.xml.SimpleFlowFactoryBean#0,templateSpring,taskExecutor,TaskStep1,TaskStep2,TaskStep3,TaskStep4,TaskStep5,finTasklet,propertyConfigurer,dataSourceTemplate,transactionManager,defaultTxAttributes,jobRepository,JobTransactionManager,jobExplorer]; root of factory hierarchy
+08/01/2016 14:02:52 INFO  No TaskExecutor has been set, defaulting to synchronous executor.
+08/01/2016 14:02:52 INFO  Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4f430ea5: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,jobLauncher,org.springframework.batch.core.scope.internalStepScope,org.springframework.batch.core.scope.internalJobScope,org.springframework.beans.factory.config.CustomEditorConfigurer,org.springframework.batch.core.configuration.xml.CoreNamespacePostProcessor,batch_state_transition_comparator,step1,step2,step3,step4,step5,chunk1,fin,org.springframework.batch.core.configuration.xml.SimpleFlowFactoryBean#0,templateSpring,taskExecutor,TaskStep1,TaskStep2,TaskStep3,TaskStep4,TaskStep5,finTasklet,propertyConfigurer,dataSourceTemplate,transactionManager,defaultTxAttributes,jobRepository,JobTransactionManager,jobExplorer]; root of factory hierarchy
+08/01/2016 14:02:52 ERROR ---- Error proceso org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'chunk1': Cannot resolve reference to bean 'itemReader' while setting bean property 'itemReader'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'itemReader' is defined
+08/01/2016 14:17:18 INFO  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@9e12aac: startup date [Fri Jan 08 14:17:18 CET 2016]; root of context hierarchy
+08/01/2016 14:17:18 INFO  Loading XML bean definitions from class path resource [META-INF/applicationContext.xml]
+08/01/2016 14:17:18 INFO  Loading XML bean definitions from class path resource [META-INF/applicationDataSources.xml]
+08/01/2016 14:17:18 INFO  Loading properties file from class path resource [config/template/SqlMapConfig.properties]
+08/01/2016 14:17:18 INFO  Loading properties file from class path resource [config/template/prj.properties]
+08/01/2016 14:17:18 INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@64bd46d6: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,jobLauncher,org.springframework.batch.core.scope.internalStepScope,org.springframework.batch.core.scope.internalJobScope,org.springframework.beans.factory.config.CustomEditorConfigurer,org.springframework.batch.core.configuration.xml.CoreNamespacePostProcessor,batch_state_transition_comparator,step1,step2,step3,step4,step5,chunk1,fin,org.springframework.batch.core.configuration.xml.SimpleFlowFactoryBean#0,templateSpring,taskExecutor,TaskStep1,TaskStep2,TaskStep3,TaskStep4,TaskStep5,finTasklet,propertyConfigurer,dataSourceTemplate,transactionManager,defaultTxAttributes,jobRepository,JobTransactionManager,jobExplorer]; root of factory hierarchy
+08/01/2016 14:17:19 INFO  No TaskExecutor has been set, defaulting to synchronous executor.
+08/01/2016 14:17:19 INFO  Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@64bd46d6: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,jobLauncher,org.springframework.batch.core.scope.internalStepScope,org.springframework.batch.core.scope.internalJobScope,org.springframework.beans.factory.config.CustomEditorConfigurer,org.springframework.batch.core.configuration.xml.CoreNamespacePostProcessor,batch_state_transition_comparator,step1,step2,step3,step4,step5,chunk1,fin,org.springframework.batch.core.configuration.xml.SimpleFlowFactoryBean#0,templateSpring,taskExecutor,TaskStep1,TaskStep2,TaskStep3,TaskStep4,TaskStep5,finTasklet,propertyConfigurer,dataSourceTemplate,transactionManager,defaultTxAttributes,jobRepository,JobTransactionManager,jobExplorer]; root of factory hierarchy
+08/01/2016 14:17:19 ERROR ---- Error proceso org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'chunk1': Cannot resolve reference to bean 'itemReader' while setting bean property 'itemReader'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'itemReader' is defined
+08/01/2016 14:19:48 INFO  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1db88745: startup date [Fri Jan 08 14:19:48 CET 2016]; root of context hierarchy
+08/01/2016 14:19:48 INFO  Loading XML bean definitions from class path resource [META-INF/applicationContext.xml]
+08/01/2016 14:19:48 INFO  Loading XML bean definitions from class path resource [META-INF/applicationDataSources.xml]
+08/01/2016 14:19:48 INFO  Loading properties file from class path resource [config/template/SqlMapConfig.properties]
+08/01/2016 14:19:48 INFO  Loading properties file from class path resource [config/template/prj.properties]
+08/01/2016 14:19:48 INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@64bd46d6: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,jobLauncher,org.springframework.batch.core.scope.internalStepScope,org.springframework.batch.core.scope.internalJobScope,org.springframework.beans.factory.config.CustomEditorConfigurer,org.springframework.batch.core.configuration.xml.CoreNamespacePostProcessor,batch_state_transition_comparator,step1,step2,step3,step4,step5,chunk1,fin,org.springframework.batch.core.configuration.xml.SimpleFlowFactoryBean#0,templateSpring,taskExecutor,TaskStep1,TaskStep2,TaskStep3,TaskStep4,TaskStep5,itemReader,itemProcess,itemWriter,finTasklet,propertyConfigurer,dataSourceTemplate,transactionManager,defaultTxAttributes,jobRepository,JobTransactionManager,jobExplorer]; root of factory hierarchy
+08/01/2016 14:19:48 INFO  No TaskExecutor has been set, defaulting to synchronous executor.
+08/01/2016 14:19:49 INFO  Initializing ExecutorService  'taskExecutor'
+08/01/2016 14:19:49 INFO  Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@64bd46d6: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,jobLauncher,org.springframework.batch.core.scope.internalStepScope,org.springframework.batch.core.scope.internalJobScope,org.springframework.beans.factory.config.CustomEditorConfigurer,org.springframework.batch.core.configuration.xml.CoreNamespacePostProcessor,batch_state_transition_comparator,step1,step2,step3,step4,step5,chunk1,fin,org.springframework.batch.core.configuration.xml.SimpleFlowFactoryBean#0,templateSpring,taskExecutor,TaskStep1,TaskStep2,TaskStep3,TaskStep4,TaskStep5,itemReader,itemProcess,itemWriter,finTasklet,propertyConfigurer,dataSourceTemplate,transactionManager,defaultTxAttributes,jobRepository,JobTransactionManager,jobExplorer]; root of factory hierarchy
+08/01/2016 14:19:49 INFO  Shutting down ExecutorService 'taskExecutor'
+08/01/2016 14:19:49 ERROR ---- Error proceso org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.batch.core.configuration.xml.SimpleFlowFactoryBean#0': Cannot create inner bean '(inner bean)' of type [org.springframework.batch.core.job.flow.support.StateTransition] while setting bean property 'stateTransitions' with key [2]; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#2': Cannot create inner bean '(inner bean)' of type [org.springframework.batch.core.job.flow.support.state.DecisionState] while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#2': Cannot resolve reference to bean 'DeciderReintentos' while setting constructor argument; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'DeciderReintentos' is defined
+08/01/2016 14:21:31 INFO  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@58027738: startup date [Fri Jan 08 14:21:31 CET 2016]; root of context hierarchy
+08/01/2016 14:21:31 INFO  Loading XML bean definitions from class path resource [META-INF/applicationContext.xml]
+08/01/2016 14:21:32 INFO  Loading XML bean definitions from class path resource [META-INF/applicationDataSources.xml]
+08/01/2016 14:21:32 INFO  Loading properties file from class path resource [config/template/SqlMapConfig.properties]
+08/01/2016 14:21:32 INFO  Loading properties file from class path resource [config/template/prj.properties]
+08/01/2016 14:21:32 INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@64bd46d6: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,jobLauncher,org.springframework.batch.core.scope.internalStepScope,org.springframework.batch.core.scope.internalJobScope,org.springframework.beans.factory.config.CustomEditorConfigurer,org.springframework.batch.core.configuration.xml.CoreNamespacePostProcessor,batch_state_transition_comparator,step1,step2,step3,step4,step5,chunk1,fin,org.springframework.batch.core.configuration.xml.SimpleFlowFactoryBean#0,templateSpring,taskExecutor,TaskStep1,TaskStep2,TaskStep3,TaskStep4,TaskStep5,itemReader,itemProcess,itemWriter,finTasklet,propertyConfigurer,dataSourceTemplate,transactionManager,defaultTxAttributes,jobRepository,JobTransactionManager,jobExplorer]; root of factory hierarchy
+08/01/2016 14:21:32 INFO  No TaskExecutor has been set, defaulting to synchronous executor.
+08/01/2016 14:21:32 INFO  Initializing ExecutorService  'taskExecutor'
+08/01/2016 14:21:32 INFO  Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@64bd46d6: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,jobLauncher,org.springframework.batch.core.scope.internalStepScope,org.springframework.batch.core.scope.internalJobScope,org.springframework.beans.factory.config.CustomEditorConfigurer,org.springframework.batch.core.configuration.xml.CoreNamespacePostProcessor,batch_state_transition_comparator,step1,step2,step3,step4,step5,chunk1,fin,org.springframework.batch.core.configuration.xml.SimpleFlowFactoryBean#0,templateSpring,taskExecutor,TaskStep1,TaskStep2,TaskStep3,TaskStep4,TaskStep5,itemReader,itemProcess,itemWriter,finTasklet,propertyConfigurer,dataSourceTemplate,transactionManager,defaultTxAttributes,jobRepository,JobTransactionManager,jobExplorer]; root of factory hierarchy
+08/01/2016 14:21:32 INFO  Shutting down ExecutorService 'taskExecutor'
+08/01/2016 14:21:32 ERROR ---- Error proceso org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.batch.core.configuration.xml.SimpleFlowFactoryBean#0': Cannot create inner bean '(inner bean)' of type [org.springframework.batch.core.job.flow.support.StateTransition] while setting bean property 'stateTransitions' with key [2]; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#2': Cannot create inner bean '(inner bean)' of type [org.springframework.batch.core.job.flow.support.state.DecisionState] while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#2': Cannot resolve reference to bean 'DeciderReintentos' while setting constructor argument; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'DeciderReintentos' is defined
+08/01/2016 14:23:09 INFO  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1db88745: startup date [Fri Jan 08 14:23:09 CET 2016]; root of context hierarchy
+08/01/2016 14:23:09 INFO  Loading XML bean definitions from class path resource [META-INF/applicationContext.xml]
+08/01/2016 14:23:09 ERROR ---- Error proceso org.springframework.beans.factory.xml.XmlBeanDefinitionStoreException: Line 113 in XML document from class path resource [META-INF/applicationContext.xml] is invalid; nested exception is org.xml.sax.SAXParseException; lineNumber: 113; columnNumber: 71; cvc-id.2: Hay varias incidencias del valor de identificador 'decider'.
+08/01/2016 14:25:55 INFO  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1db88745: startup date [Fri Jan 08 14:25:55 CET 2016]; root of context hierarchy
+08/01/2016 14:25:55 INFO  Loading XML bean definitions from class path resource [META-INF/applicationContext.xml]
+08/01/2016 14:25:56 INFO  Loading XML bean definitions from class path resource [META-INF/applicationDataSources.xml]
+08/01/2016 14:25:56 INFO  Loading properties file from class path resource [config/template/SqlMapConfig.properties]
+08/01/2016 14:25:56 INFO  Loading properties file from class path resource [config/template/prj.properties]
+08/01/2016 14:25:56 INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@64bd46d6: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,jobLauncher,org.springframework.batch.core.scope.internalStepScope,org.springframework.batch.core.scope.internalJobScope,org.springframework.beans.factory.config.CustomEditorConfigurer,org.springframework.batch.core.configuration.xml.CoreNamespacePostProcessor,batch_state_transition_comparator,step1,step2,step3,step4,step5,chunk1,fin,org.springframework.batch.core.configuration.xml.SimpleFlowFactoryBean#0,templateSpring,taskExecutor,TaskStep1,TaskStep2,TaskStep3,TaskStep4,TaskStep5,itemReader,itemProcess,itemWriter,DeciderReintentos,finTasklet,propertyConfigurer,dataSourceTemplate,transactionManager,defaultTxAttributes,jobRepository,JobTransactionManager,jobExplorer]; root of factory hierarchy
+08/01/2016 14:25:56 INFO  No TaskExecutor has been set, defaulting to synchronous executor.
+08/01/2016 14:25:56 INFO  Initializing ExecutorService  'taskExecutor'
+08/01/2016 14:25:56 INFO  Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@64bd46d6: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,jobLauncher,org.springframework.batch.core.scope.internalStepScope,org.springframework.batch.core.scope.internalJobScope,org.springframework.beans.factory.config.CustomEditorConfigurer,org.springframework.batch.core.configuration.xml.CoreNamespacePostProcessor,batch_state_transition_comparator,step1,step2,step3,step4,step5,chunk1,fin,org.springframework.batch.core.configuration.xml.SimpleFlowFactoryBean#0,templateSpring,taskExecutor,TaskStep1,TaskStep2,TaskStep3,TaskStep4,TaskStep5,itemReader,itemProcess,itemWriter,DeciderReintentos,finTasklet,propertyConfigurer,dataSourceTemplate,transactionManager,defaultTxAttributes,jobRepository,JobTransactionManager,jobExplorer]; root of factory hierarchy
+08/01/2016 14:25:56 INFO  Shutting down ExecutorService 'taskExecutor'
+08/01/2016 14:25:56 ERROR ---- Error proceso org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jobExplorer' defined in class path resource [META-INF/applicationDataSources.xml]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: DataSource must not be null.
+08/01/2016 14:27:40 INFO  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1db88745: startup date [Fri Jan 08 14:27:40 CET 2016]; root of context hierarchy
+08/01/2016 14:27:40 INFO  Loading XML bean definitions from class path resource [META-INF/applicationContext.xml]
+08/01/2016 14:27:40 INFO  Loading XML bean definitions from class path resource [META-INF/applicationDataSources.xml]
+08/01/2016 14:27:40 INFO  Loading properties file from class path resource [config/template/SqlMapConfig.properties]
+08/01/2016 14:27:40 INFO  Loading properties file from class path resource [config/template/prj.properties]
+08/01/2016 14:27:40 INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@64bd46d6: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,jobLauncher,org.springframework.batch.core.scope.internalStepScope,org.springframework.batch.core.scope.internalJobScope,org.springframework.beans.factory.config.CustomEditorConfigurer,org.springframework.batch.core.configuration.xml.CoreNamespacePostProcessor,batch_state_transition_comparator,step1,step2,step3,step4,step5,chunk1,fin,org.springframework.batch.core.configuration.xml.SimpleFlowFactoryBean#0,templateSpring,taskExecutor,TaskStep1,TaskStep2,TaskStep3,TaskStep4,TaskStep5,itemReader,itemProcess,itemWriter,DeciderReintentos,finTasklet,propertyConfigurer,dataSourceTemplate,transactionManager,defaultTxAttributes,jobRepository,JobTransactionManager,jobExplorer]; root of factory hierarchy
+08/01/2016 14:27:40 INFO  No TaskExecutor has been set, defaulting to synchronous executor.
+08/01/2016 14:27:41 INFO  Initializing ExecutorService  'taskExecutor'
+08/01/2016 14:27:41 INFO  Job: [FlowJob: [name=templateSpring]] launched with the following parameters: [{}]
+08/01/2016 14:27:41 INFO  Executing step: [step1]
+08/01/2016 14:27:41 ERROR Encountered an error executing step step1 in job templateSpring
+org.springframework.transaction.CannotCreateTransactionException: Could not open JDBC Connection for transaction; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot load JDBC driver class 'oracle.jdbc.driver.OracleDriver'
+	at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:240)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:371)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:127)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:271)
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:81)
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:374)
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215)
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:144)
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:257)
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:200)
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:148)
+	at org.springframework.batch.core.job.flow.JobFlowExecutor.executeStep(JobFlowExecutor.java:64)
+	at org.springframework.batch.core.job.flow.support.state.StepState.handle(StepState.java:67)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.resume(SimpleFlow.java:169)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.start(SimpleFlow.java:144)
+	at org.springframework.batch.core.job.flow.FlowJob.doExecute(FlowJob.java:134)
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:306)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:135)
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:48)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:128)
+	at org.template.Inicio.main(Inicio.java:40)
+Caused by: org.apache.commons.dbcp.SQLNestedException: Cannot load JDBC driver class 'oracle.jdbc.driver.OracleDriver'
+	at org.apache.commons.dbcp.BasicDataSource.createConnectionFactory(BasicDataSource.java:1429)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1371)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:202)
+	... 20 more
+Caused by: java.lang.ClassNotFoundException: oracle.jdbc.driver.OracleDriver
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:423)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:356)
+	at org.apache.commons.dbcp.BasicDataSource.createConnectionFactory(BasicDataSource.java:1420)
+	... 23 more
+08/01/2016 14:27:41 INFO  Duplicate step [step1] detected in execution of job=[templateSpring]. If either step fails, both will be executed again on restart.
+08/01/2016 14:27:41 INFO  Executing step: [step1]
+08/01/2016 14:27:41 ERROR Encountered an error executing step step1 in job templateSpring
+org.springframework.transaction.CannotCreateTransactionException: Could not open JDBC Connection for transaction; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot load JDBC driver class 'oracle.jdbc.driver.OracleDriver'
+	at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:240)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:371)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:127)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:271)
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:81)
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:374)
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215)
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:144)
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:257)
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:200)
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:148)
+	at org.springframework.batch.core.job.flow.JobFlowExecutor.executeStep(JobFlowExecutor.java:64)
+	at org.springframework.batch.core.job.flow.support.state.StepState.handle(StepState.java:67)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.resume(SimpleFlow.java:169)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.start(SimpleFlow.java:144)
+	at org.springframework.batch.core.job.flow.FlowJob.doExecute(FlowJob.java:134)
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:306)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:135)
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:48)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:128)
+	at org.template.Inicio.main(Inicio.java:40)
+Caused by: org.apache.commons.dbcp.SQLNestedException: Cannot load JDBC driver class 'oracle.jdbc.driver.OracleDriver'
+	at org.apache.commons.dbcp.BasicDataSource.createConnectionFactory(BasicDataSource.java:1429)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1371)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:202)
+	... 20 more
+Caused by: java.lang.ClassNotFoundException: oracle.jdbc.driver.OracleDriver
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:423)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:356)
+	at org.apache.commons.dbcp.BasicDataSource.createConnectionFactory(BasicDataSource.java:1420)
+	... 23 more
+08/01/2016 14:27:41 INFO  Duplicate step [step1] detected in execution of job=[templateSpring]. If either step fails, both will be executed again on restart.
+08/01/2016 14:27:41 INFO  Executing step: [step1]
+08/01/2016 14:27:41 ERROR Encountered an error executing step step1 in job templateSpring
+org.springframework.transaction.CannotCreateTransactionException: Could not open JDBC Connection for transaction; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot load JDBC driver class 'oracle.jdbc.driver.OracleDriver'
+	at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:240)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:371)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:127)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:271)
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:81)
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:374)
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215)
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:144)
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:257)
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:200)
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:148)
+	at org.springframework.batch.core.job.flow.JobFlowExecutor.executeStep(JobFlowExecutor.java:64)
+	at org.springframework.batch.core.job.flow.support.state.StepState.handle(StepState.java:67)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.resume(SimpleFlow.java:169)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.start(SimpleFlow.java:144)
+	at org.springframework.batch.core.job.flow.FlowJob.doExecute(FlowJob.java:134)
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:306)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:135)
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:48)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:128)
+	at org.template.Inicio.main(Inicio.java:40)
+Caused by: org.apache.commons.dbcp.SQLNestedException: Cannot load JDBC driver class 'oracle.jdbc.driver.OracleDriver'
+	at org.apache.commons.dbcp.BasicDataSource.createConnectionFactory(BasicDataSource.java:1429)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1371)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:202)
+	... 20 more
+Caused by: java.lang.ClassNotFoundException: oracle.jdbc.driver.OracleDriver
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:423)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:356)
+	at org.apache.commons.dbcp.BasicDataSource.createConnectionFactory(BasicDataSource.java:1420)
+	... 23 more
+08/01/2016 14:27:41 INFO  Duplicate step [step1] detected in execution of job=[templateSpring]. If either step fails, both will be executed again on restart.
+08/01/2016 14:27:41 INFO  Executing step: [step1]
+08/01/2016 14:27:41 ERROR Encountered an error executing step step1 in job templateSpring
+org.springframework.transaction.CannotCreateTransactionException: Could not open JDBC Connection for transaction; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot load JDBC driver class 'oracle.jdbc.driver.OracleDriver'
+	at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:240)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:371)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:127)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:271)
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:81)
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:374)
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215)
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:144)
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:257)
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:200)
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:148)
+	at org.springframework.batch.core.job.flow.JobFlowExecutor.executeStep(JobFlowExecutor.java:64)
+	at org.springframework.batch.core.job.flow.support.state.StepState.handle(StepState.java:67)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.resume(SimpleFlow.java:169)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.start(SimpleFlow.java:144)
+	at org.springframework.batch.core.job.flow.FlowJob.doExecute(FlowJob.java:134)
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:306)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:135)
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:48)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:128)
+	at org.template.Inicio.main(Inicio.java:40)
+Caused by: org.apache.commons.dbcp.SQLNestedException: Cannot load JDBC driver class 'oracle.jdbc.driver.OracleDriver'
+	at org.apache.commons.dbcp.BasicDataSource.createConnectionFactory(BasicDataSource.java:1429)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1371)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:202)
+	... 20 more
+Caused by: java.lang.ClassNotFoundException: oracle.jdbc.driver.OracleDriver
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:423)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:356)
+	at org.apache.commons.dbcp.BasicDataSource.createConnectionFactory(BasicDataSource.java:1420)
+	... 23 more
+08/01/2016 14:27:42 INFO  Duplicate step [step1] detected in execution of job=[templateSpring]. If either step fails, both will be executed again on restart.
+08/01/2016 14:27:42 INFO  Executing step: [step1]
+08/01/2016 14:27:42 ERROR Encountered an error executing step step1 in job templateSpring
+org.springframework.transaction.CannotCreateTransactionException: Could not open JDBC Connection for transaction; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot load JDBC driver class 'oracle.jdbc.driver.OracleDriver'
+	at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:240)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:371)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:127)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:271)
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:81)
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:374)
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215)
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:144)
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:257)
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:200)
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:148)
+	at org.springframework.batch.core.job.flow.JobFlowExecutor.executeStep(JobFlowExecutor.java:64)
+	at org.springframework.batch.core.job.flow.support.state.StepState.handle(StepState.java:67)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.resume(SimpleFlow.java:169)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.start(SimpleFlow.java:144)
+	at org.springframework.batch.core.job.flow.FlowJob.doExecute(FlowJob.java:134)
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:306)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:135)
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:48)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:128)
+	at org.template.Inicio.main(Inicio.java:40)
+Caused by: org.apache.commons.dbcp.SQLNestedException: Cannot load JDBC driver class 'oracle.jdbc.driver.OracleDriver'
+	at org.apache.commons.dbcp.BasicDataSource.createConnectionFactory(BasicDataSource.java:1429)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1371)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:202)
+	... 20 more
+Caused by: java.lang.ClassNotFoundException: oracle.jdbc.driver.OracleDriver
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:423)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:356)
+	at org.apache.commons.dbcp.BasicDataSource.createConnectionFactory(BasicDataSource.java:1420)
+	... 23 more
+08/01/2016 14:27:42 INFO  Executing step: [fin]
+08/01/2016 14:27:42 ERROR Encountered an error executing step fin in job templateSpring
+org.springframework.transaction.CannotCreateTransactionException: Could not open JDBC Connection for transaction; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot load JDBC driver class 'oracle.jdbc.driver.OracleDriver'
+	at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:240)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:371)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:127)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:271)
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:81)
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:374)
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215)
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:144)
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:257)
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:200)
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:148)
+	at org.springframework.batch.core.job.flow.JobFlowExecutor.executeStep(JobFlowExecutor.java:64)
+	at org.springframework.batch.core.job.flow.support.state.StepState.handle(StepState.java:67)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.resume(SimpleFlow.java:169)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.start(SimpleFlow.java:144)
+	at org.springframework.batch.core.job.flow.FlowJob.doExecute(FlowJob.java:134)
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:306)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:135)
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:48)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:128)
+	at org.template.Inicio.main(Inicio.java:40)
+Caused by: org.apache.commons.dbcp.SQLNestedException: Cannot load JDBC driver class 'oracle.jdbc.driver.OracleDriver'
+	at org.apache.commons.dbcp.BasicDataSource.createConnectionFactory(BasicDataSource.java:1429)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1371)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:202)
+	... 20 more
+Caused by: java.lang.ClassNotFoundException: oracle.jdbc.driver.OracleDriver
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:423)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:356)
+	at org.apache.commons.dbcp.BasicDataSource.createConnectionFactory(BasicDataSource.java:1420)
+	... 23 more
+08/01/2016 14:27:42 INFO  Job: [FlowJob: [name=templateSpring]] completed with the following parameters: [{}] and the following status: [FAILED]
+08/01/2016 14:27:42 INFO  ---- Fin proceso 
+08/01/2016 14:28:54 INFO  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1db88745: startup date [Fri Jan 08 14:28:54 CET 2016]; root of context hierarchy
+08/01/2016 14:28:54 INFO  Loading XML bean definitions from class path resource [META-INF/applicationContext.xml]
+08/01/2016 14:28:55 INFO  Loading XML bean definitions from class path resource [META-INF/applicationDataSources.xml]
+08/01/2016 14:28:55 INFO  Loading properties file from class path resource [config/template/SqlMapConfig.properties]
+08/01/2016 14:28:55 INFO  Loading properties file from class path resource [config/template/prj.properties]
+08/01/2016 14:28:55 INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@64bd46d6: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,jobLauncher,org.springframework.batch.core.scope.internalStepScope,org.springframework.batch.core.scope.internalJobScope,org.springframework.beans.factory.config.CustomEditorConfigurer,org.springframework.batch.core.configuration.xml.CoreNamespacePostProcessor,batch_state_transition_comparator,step1,step2,step3,step4,step5,chunk1,fin,org.springframework.batch.core.configuration.xml.SimpleFlowFactoryBean#0,templateSpring,taskExecutor,TaskStep1,TaskStep2,TaskStep3,TaskStep4,TaskStep5,itemReader,itemProcess,itemWriter,DeciderReintentos,finTasklet,propertyConfigurer,dataSourceTemplate,transactionManager,defaultTxAttributes,jobRepository,JobTransactionManager,jobExplorer]; root of factory hierarchy
+08/01/2016 14:28:55 INFO  No TaskExecutor has been set, defaulting to synchronous executor.
+08/01/2016 14:28:55 INFO  Initializing ExecutorService  'taskExecutor'
+08/01/2016 14:28:56 INFO  Job: [FlowJob: [name=templateSpring]] launched with the following parameters: [{}]
+08/01/2016 14:28:56 INFO  Executing step: [step1]
+08/01/2016 14:28:56 ERROR Encountered an error executing step step1 in job templateSpring
+org.springframework.transaction.CannotCreateTransactionException: Could not open JDBC Connection for transaction; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create JDBC driver of class '' for connect URL 'null'
+	at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:240)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:371)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:127)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:271)
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:81)
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:374)
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215)
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:144)
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:257)
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:200)
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:148)
+	at org.springframework.batch.core.job.flow.JobFlowExecutor.executeStep(JobFlowExecutor.java:64)
+	at org.springframework.batch.core.job.flow.support.state.StepState.handle(StepState.java:67)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.resume(SimpleFlow.java:169)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.start(SimpleFlow.java:144)
+	at org.springframework.batch.core.job.flow.FlowJob.doExecute(FlowJob.java:134)
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:306)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:135)
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:48)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:128)
+	at org.template.Inicio.main(Inicio.java:40)
+Caused by: org.apache.commons.dbcp.SQLNestedException: Cannot create JDBC driver of class '' for connect URL 'null'
+	at org.apache.commons.dbcp.BasicDataSource.createConnectionFactory(BasicDataSource.java:1452)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1371)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:202)
+	... 20 more
+Caused by: java.lang.NullPointerException
+	at sun.jdbc.odbc.JdbcOdbcDriver.getProtocol(JdbcOdbcDriver.java:524)
+	at sun.jdbc.odbc.JdbcOdbcDriver.knownURL(JdbcOdbcDriver.java:493)
+	at sun.jdbc.odbc.JdbcOdbcDriver.acceptsURL(JdbcOdbcDriver.java:307)
+	at java.sql.DriverManager.getDriver(DriverManager.java:273)
+	at org.apache.commons.dbcp.BasicDataSource.createConnectionFactory(BasicDataSource.java:1437)
+	... 23 more
+08/01/2016 14:28:56 INFO  Duplicate step [step1] detected in execution of job=[templateSpring]. If either step fails, both will be executed again on restart.
+08/01/2016 14:28:56 INFO  Executing step: [step1]
+08/01/2016 14:28:56 ERROR Encountered an error executing step step1 in job templateSpring
+org.springframework.transaction.CannotCreateTransactionException: Could not open JDBC Connection for transaction; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create JDBC driver of class '' for connect URL 'null'
+	at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:240)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:371)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:127)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:271)
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:81)
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:374)
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215)
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:144)
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:257)
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:200)
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:148)
+	at org.springframework.batch.core.job.flow.JobFlowExecutor.executeStep(JobFlowExecutor.java:64)
+	at org.springframework.batch.core.job.flow.support.state.StepState.handle(StepState.java:67)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.resume(SimpleFlow.java:169)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.start(SimpleFlow.java:144)
+	at org.springframework.batch.core.job.flow.FlowJob.doExecute(FlowJob.java:134)
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:306)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:135)
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:48)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:128)
+	at org.template.Inicio.main(Inicio.java:40)
+Caused by: org.apache.commons.dbcp.SQLNestedException: Cannot create JDBC driver of class '' for connect URL 'null'
+	at org.apache.commons.dbcp.BasicDataSource.createConnectionFactory(BasicDataSource.java:1452)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1371)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:202)
+	... 20 more
+Caused by: java.lang.NullPointerException
+	at sun.jdbc.odbc.JdbcOdbcDriver.getProtocol(JdbcOdbcDriver.java:524)
+	at sun.jdbc.odbc.JdbcOdbcDriver.knownURL(JdbcOdbcDriver.java:493)
+	at sun.jdbc.odbc.JdbcOdbcDriver.acceptsURL(JdbcOdbcDriver.java:307)
+	at java.sql.DriverManager.getDriver(DriverManager.java:273)
+	at org.apache.commons.dbcp.BasicDataSource.createConnectionFactory(BasicDataSource.java:1437)
+	... 23 more
+08/01/2016 14:28:56 INFO  Duplicate step [step1] detected in execution of job=[templateSpring]. If either step fails, both will be executed again on restart.
+08/01/2016 14:28:56 INFO  Executing step: [step1]
+08/01/2016 14:28:56 ERROR Encountered an error executing step step1 in job templateSpring
+org.springframework.transaction.CannotCreateTransactionException: Could not open JDBC Connection for transaction; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create JDBC driver of class '' for connect URL 'null'
+	at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:240)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:371)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:127)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:271)
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:81)
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:374)
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215)
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:144)
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:257)
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:200)
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:148)
+	at org.springframework.batch.core.job.flow.JobFlowExecutor.executeStep(JobFlowExecutor.java:64)
+	at org.springframework.batch.core.job.flow.support.state.StepState.handle(StepState.java:67)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.resume(SimpleFlow.java:169)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.start(SimpleFlow.java:144)
+	at org.springframework.batch.core.job.flow.FlowJob.doExecute(FlowJob.java:134)
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:306)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:135)
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:48)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:128)
+	at org.template.Inicio.main(Inicio.java:40)
+Caused by: org.apache.commons.dbcp.SQLNestedException: Cannot create JDBC driver of class '' for connect URL 'null'
+	at org.apache.commons.dbcp.BasicDataSource.createConnectionFactory(BasicDataSource.java:1452)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1371)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:202)
+	... 20 more
+Caused by: java.lang.NullPointerException
+	at sun.jdbc.odbc.JdbcOdbcDriver.getProtocol(JdbcOdbcDriver.java:524)
+	at sun.jdbc.odbc.JdbcOdbcDriver.knownURL(JdbcOdbcDriver.java:493)
+	at sun.jdbc.odbc.JdbcOdbcDriver.acceptsURL(JdbcOdbcDriver.java:307)
+	at java.sql.DriverManager.getDriver(DriverManager.java:273)
+	at org.apache.commons.dbcp.BasicDataSource.createConnectionFactory(BasicDataSource.java:1437)
+	... 23 more
+08/01/2016 14:28:56 INFO  Duplicate step [step1] detected in execution of job=[templateSpring]. If either step fails, both will be executed again on restart.
+08/01/2016 14:28:56 INFO  Executing step: [step1]
+08/01/2016 14:28:56 ERROR Encountered an error executing step step1 in job templateSpring
+org.springframework.transaction.CannotCreateTransactionException: Could not open JDBC Connection for transaction; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create JDBC driver of class '' for connect URL 'null'
+	at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:240)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:371)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:127)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:271)
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:81)
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:374)
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215)
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:144)
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:257)
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:200)
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:148)
+	at org.springframework.batch.core.job.flow.JobFlowExecutor.executeStep(JobFlowExecutor.java:64)
+	at org.springframework.batch.core.job.flow.support.state.StepState.handle(StepState.java:67)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.resume(SimpleFlow.java:169)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.start(SimpleFlow.java:144)
+	at org.springframework.batch.core.job.flow.FlowJob.doExecute(FlowJob.java:134)
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:306)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:135)
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:48)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:128)
+	at org.template.Inicio.main(Inicio.java:40)
+Caused by: org.apache.commons.dbcp.SQLNestedException: Cannot create JDBC driver of class '' for connect URL 'null'
+	at org.apache.commons.dbcp.BasicDataSource.createConnectionFactory(BasicDataSource.java:1452)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1371)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:202)
+	... 20 more
+Caused by: java.lang.NullPointerException
+	at sun.jdbc.odbc.JdbcOdbcDriver.getProtocol(JdbcOdbcDriver.java:524)
+	at sun.jdbc.odbc.JdbcOdbcDriver.knownURL(JdbcOdbcDriver.java:493)
+	at sun.jdbc.odbc.JdbcOdbcDriver.acceptsURL(JdbcOdbcDriver.java:307)
+	at java.sql.DriverManager.getDriver(DriverManager.java:273)
+	at org.apache.commons.dbcp.BasicDataSource.createConnectionFactory(BasicDataSource.java:1437)
+	... 23 more
+08/01/2016 14:28:56 INFO  Duplicate step [step1] detected in execution of job=[templateSpring]. If either step fails, both will be executed again on restart.
+08/01/2016 14:28:56 INFO  Executing step: [step1]
+08/01/2016 14:28:56 ERROR Encountered an error executing step step1 in job templateSpring
+org.springframework.transaction.CannotCreateTransactionException: Could not open JDBC Connection for transaction; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create JDBC driver of class '' for connect URL 'null'
+	at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:240)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:371)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:127)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:271)
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:81)
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:374)
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215)
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:144)
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:257)
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:200)
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:148)
+	at org.springframework.batch.core.job.flow.JobFlowExecutor.executeStep(JobFlowExecutor.java:64)
+	at org.springframework.batch.core.job.flow.support.state.StepState.handle(StepState.java:67)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.resume(SimpleFlow.java:169)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.start(SimpleFlow.java:144)
+	at org.springframework.batch.core.job.flow.FlowJob.doExecute(FlowJob.java:134)
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:306)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:135)
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:48)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:128)
+	at org.template.Inicio.main(Inicio.java:40)
+Caused by: org.apache.commons.dbcp.SQLNestedException: Cannot create JDBC driver of class '' for connect URL 'null'
+	at org.apache.commons.dbcp.BasicDataSource.createConnectionFactory(BasicDataSource.java:1452)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1371)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:202)
+	... 20 more
+Caused by: java.lang.NullPointerException
+	at sun.jdbc.odbc.JdbcOdbcDriver.getProtocol(JdbcOdbcDriver.java:524)
+	at sun.jdbc.odbc.JdbcOdbcDriver.knownURL(JdbcOdbcDriver.java:493)
+	at sun.jdbc.odbc.JdbcOdbcDriver.acceptsURL(JdbcOdbcDriver.java:307)
+	at java.sql.DriverManager.getDriver(DriverManager.java:273)
+	at org.apache.commons.dbcp.BasicDataSource.createConnectionFactory(BasicDataSource.java:1437)
+	... 23 more
+08/01/2016 14:28:56 INFO  Executing step: [fin]
+08/01/2016 14:28:56 ERROR Encountered an error executing step fin in job templateSpring
+org.springframework.transaction.CannotCreateTransactionException: Could not open JDBC Connection for transaction; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create JDBC driver of class '' for connect URL 'null'
+	at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:240)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:371)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:127)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:271)
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:81)
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:374)
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215)
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:144)
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:257)
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:200)
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:148)
+	at org.springframework.batch.core.job.flow.JobFlowExecutor.executeStep(JobFlowExecutor.java:64)
+	at org.springframework.batch.core.job.flow.support.state.StepState.handle(StepState.java:67)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.resume(SimpleFlow.java:169)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.start(SimpleFlow.java:144)
+	at org.springframework.batch.core.job.flow.FlowJob.doExecute(FlowJob.java:134)
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:306)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:135)
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:48)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:128)
+	at org.template.Inicio.main(Inicio.java:40)
+Caused by: org.apache.commons.dbcp.SQLNestedException: Cannot create JDBC driver of class '' for connect URL 'null'
+	at org.apache.commons.dbcp.BasicDataSource.createConnectionFactory(BasicDataSource.java:1452)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1371)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:202)
+	... 20 more
+Caused by: java.lang.NullPointerException
+	at sun.jdbc.odbc.JdbcOdbcDriver.getProtocol(JdbcOdbcDriver.java:524)
+	at sun.jdbc.odbc.JdbcOdbcDriver.knownURL(JdbcOdbcDriver.java:493)
+	at sun.jdbc.odbc.JdbcOdbcDriver.acceptsURL(JdbcOdbcDriver.java:307)
+	at java.sql.DriverManager.getDriver(DriverManager.java:273)
+	at org.apache.commons.dbcp.BasicDataSource.createConnectionFactory(BasicDataSource.java:1437)
+	... 23 more
+08/01/2016 14:28:56 INFO  Job: [FlowJob: [name=templateSpring]] completed with the following parameters: [{}] and the following status: [FAILED]
+08/01/2016 14:28:56 INFO  ---- Fin proceso 
+08/01/2016 14:30:27 INFO  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3db8d241: startup date [Fri Jan 08 14:30:27 CET 2016]; root of context hierarchy
+08/01/2016 14:30:28 INFO  Loading XML bean definitions from class path resource [META-INF/applicationContext.xml]
+08/01/2016 14:30:28 INFO  Loading XML bean definitions from class path resource [META-INF/applicationDataSources.xml]
+08/01/2016 14:30:28 INFO  Loading properties file from class path resource [config/template/SqlMapConfig.properties]
+08/01/2016 14:30:28 INFO  Loading properties file from class path resource [config/template/prj.properties]
+08/01/2016 14:30:28 INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5c606f26: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,jobLauncher,org.springframework.batch.core.scope.internalStepScope,org.springframework.batch.core.scope.internalJobScope,org.springframework.beans.factory.config.CustomEditorConfigurer,org.springframework.batch.core.configuration.xml.CoreNamespacePostProcessor,batch_state_transition_comparator,step1,step2,step3,step4,step5,chunk1,fin,org.springframework.batch.core.configuration.xml.SimpleFlowFactoryBean#0,templateSpring,taskExecutor,TaskStep1,TaskStep2,TaskStep3,TaskStep4,TaskStep5,itemReader,itemProcess,itemWriter,DeciderReintentos,finTasklet,propertyConfigurer,dataSourceTemplate,transactionManager,defaultTxAttributes,jobRepository,JobTransactionManager,jobExplorer]; root of factory hierarchy
+08/01/2016 14:30:28 INFO  No TaskExecutor has been set, defaulting to synchronous executor.
+08/01/2016 14:30:28 INFO  Initializing ExecutorService  'taskExecutor'
+08/01/2016 14:30:29 INFO  Job: [FlowJob: [name=templateSpring]] launched with the following parameters: [{}]
+08/01/2016 14:30:29 INFO  Executing step: [step1]
+08/01/2016 14:30:29 INFO  ================== INICIO TAREA STEP 1   ================== 
+08/01/2016 14:30:29 INFO  Soy el step 1
+08/01/2016 14:30:29 INFO  ================== FIN TAREA STEP 1   ================== 
+
+08/01/2016 14:30:29 INFO  Executing step: [step2]
+08/01/2016 14:30:29 INFO  ================== INICIO TAREA STEP 2   ================== 
+08/01/2016 14:30:29 INFO  Soy el step 2
+08/01/2016 14:30:29 INFO  ================== FIN TAREA STEP 2   ================== 
+
+08/01/2016 14:30:30 INFO  Executing step: [step3]
+08/01/2016 14:30:30 INFO  ================== INICIO TAREA STEP 3   ================== 
+08/01/2016 14:30:30 INFO  Soy el step 3
+08/01/2016 14:30:30 INFO  ================== FIN TAREA STEP 3   ================== 
+
+08/01/2016 14:30:30 INFO  Executing step: [step4]
+08/01/2016 14:30:30 INFO  ================== INICIO TAREA STEP 4   ================== 
+08/01/2016 14:30:30 INFO  Soy el step 4
+08/01/2016 14:30:30 INFO  ================== FIN TAREA STEP 4   ================== 
+
+08/01/2016 14:30:30 INFO  Executing step: [step5]
+08/01/2016 14:30:30 INFO  ================== INICIO TAREA STEP 5   ================== 
+08/01/2016 14:30:30 INFO  Soy el step 5
+08/01/2016 14:30:30 INFO  ================== FIN TAREA STEP 5   ================== 
+
+08/01/2016 14:30:30 INFO  Executing step: [chunk1]
+08/01/2016 14:30:30 WARN  ******* Comienza el Reader : 
+08/01/2016 14:30:30 WARN  ******* Comienza el Reader : 
+08/01/2016 14:30:30 WARN  ******* Comienza el Reader : 
+08/01/2016 14:30:30 WARN  ******* Comienza el Reader : 
+08/01/2016 14:30:30 WARN  ******* Comienza el Reader : 
+08/01/2016 14:30:30 INFO  Executing step: [fin]
+08/01/2016 14:30:30 INFO  Job: [FlowJob: [name=templateSpring]] completed with the following parameters: [{}] and the following status: [COMPLETED]
+08/01/2016 14:30:30 INFO  ---- Fin proceso 
+08/01/2016 14:32:59 INFO  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@30f3c90f: startup date [Fri Jan 08 14:32:59 CET 2016]; root of context hierarchy
+08/01/2016 14:32:59 INFO  Loading XML bean definitions from class path resource [META-INF/applicationContext.xml]
+08/01/2016 14:33:00 INFO  Loading XML bean definitions from class path resource [META-INF/applicationDataSources.xml]
+08/01/2016 14:33:00 INFO  Loading properties file from class path resource [config/template/SqlMapConfig.properties]
+08/01/2016 14:33:00 INFO  Loading properties file from class path resource [config/template/prj.properties]
+08/01/2016 14:33:00 INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5c606f26: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,jobLauncher,org.springframework.batch.core.scope.internalStepScope,org.springframework.batch.core.scope.internalJobScope,org.springframework.beans.factory.config.CustomEditorConfigurer,org.springframework.batch.core.configuration.xml.CoreNamespacePostProcessor,batch_state_transition_comparator,step1,step2,step3,step4,step5,chunk1,fin,org.springframework.batch.core.configuration.xml.SimpleFlowFactoryBean#0,templateSpring,taskExecutor,TaskStep1,TaskStep2,TaskStep3,TaskStep4,TaskStep5,itemReader,itemProcess,itemWriter,DeciderReintentos,finTasklet,propertyConfigurer,dataSourceTemplate,transactionManager,defaultTxAttributes,jobRepository,JobTransactionManager,jobExplorer]; root of factory hierarchy
+08/01/2016 14:33:00 INFO  No TaskExecutor has been set, defaulting to synchronous executor.
+08/01/2016 14:33:00 INFO  Initializing ExecutorService  'taskExecutor'
+08/01/2016 14:33:01 INFO  Job: [FlowJob: [name=templateSpring]] launched with the following parameters: [{}]
+08/01/2016 14:33:01 INFO  Executing step: [step1]
+08/01/2016 14:33:01 INFO  ================== INICIO TAREA STEP 1   ================== 
+08/01/2016 14:33:01 INFO  Soy el step 1
+08/01/2016 14:33:01 INFO  ================== FIN TAREA STEP 1   ================== 
+
+08/01/2016 14:33:01 INFO  Executing step: [step2]
+08/01/2016 14:33:01 INFO  ================== INICIO TAREA STEP 2   ================== 
+08/01/2016 14:33:01 INFO  Soy el step 2
+08/01/2016 14:33:01 INFO  ================== FIN TAREA STEP 2   ================== 
+
+08/01/2016 14:33:01 INFO  Executing step: [step3]
+08/01/2016 14:33:02 INFO  ================== INICIO TAREA STEP 3   ================== 
+08/01/2016 14:33:02 INFO  Soy el step 3
+08/01/2016 14:33:02 INFO  ================== FIN TAREA STEP 3   ================== 
+
+08/01/2016 14:33:02 INFO  Executing step: [step4]
+08/01/2016 14:33:02 INFO  ================== INICIO TAREA STEP 4   ================== 
+08/01/2016 14:33:02 INFO  Soy el step 4
+08/01/2016 14:33:02 INFO  ================== FIN TAREA STEP 4   ================== 
+
+08/01/2016 14:33:02 INFO  Executing step: [step5]
+08/01/2016 14:33:02 INFO  ================== INICIO TAREA STEP 5   ================== 
+08/01/2016 14:33:02 INFO  Soy el step 5
+08/01/2016 14:33:02 INFO  ================== FIN TAREA STEP 5   ================== 
+
+08/01/2016 14:33:02 INFO  Executing step: [chunk1]
+08/01/2016 14:33:02 WARN  ******* Comienza el Reader : 
+08/01/2016 14:33:02 WARN  ******* Comienza el Reader : 
+08/01/2016 14:33:02 WARN  ******* Comienza el Reader : 
+08/01/2016 14:33:02 WARN  ******* Comienza el Reader : 
+08/01/2016 14:33:02 WARN  ******* Comienza el Reader : 
+08/01/2016 14:33:02 INFO  Executing step: [fin]
+08/01/2016 14:33:02 INFO  Task Fin
+08/01/2016 14:33:02 INFO  Job: [FlowJob: [name=templateSpring]] completed with the following parameters: [{}] and the following status: [COMPLETED]
+08/01/2016 14:33:02 INFO  ---- Fin proceso 

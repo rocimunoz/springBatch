@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:flow="http://www.springframework.org/schema/webflow-config"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:jms="http://www.springframework.org/schema/jms"
+       xmlns:lang="http://www.springframework.org/schema/lang"
+       xmlns:osgi="http://www.springframework.org/schema/osgi"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:batch="http://www.springframework.org/schema/batch"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+          http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+          http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+          http://www.springframework.org/schema/webflow-config http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.1.xsd
+          http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd
+          http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-3.2.xsd
+          http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-3.2.xsd
+          http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi-1.2.xsd
+          http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+          http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
+          http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch-3.0.xsd">
+
+    
+    <context:component-scan base-package="org.template"/>
+  
+    <bean id="jobLauncher" class="org.springframework.batch.core.launch.support.SimpleJobLauncher">
+        <property name="jobRepository" ref="jobRepository" />
+    </bean>
+       
+  
+    <!-- DEFINICION DE STEPS -->
+  
+    <batch:job id="templateSpring" job-repository="jobRepository">    
+        
+        <batch:step id="step1" >
+            <batch:tasklet ref="TaskStep1" transaction-manager="transactionManager"/>
+            <batch:next on="*" to="step2" />
+            <batch:next on="FAILED" to="decider" />
+        </batch:step>
+        
+        <batch:decision decider="DeciderReintentos" id="decider">
+            <batch:next on="DECISOR_REINTENTOS" to="step1" />
+            <batch:next on="DECISOR_FIN" to="fin" />
+        </batch:decision>
+        
+        <batch:step id="step2" >
+            <batch:tasklet ref="TaskStep2" transaction-manager="transactionManager"/>
+            <batch:next on="*" to="split1" />
+            <batch:next on="FAILED" to="fin" />
+        </batch:step>
+         
+        <batch:split id="split1" task-executor="taskExecutor" next="step5">
+            <batch:flow>
+                <batch:step id="step3" >
+                    <batch:tasklet ref="TaskStep3" transaction-manager="transactionManager"/>
+                </batch:step>
+            </batch:flow>
+            <batch:flow>
+                <batch:step id="step4" >
+                    <batch:tasklet ref="TaskStep4" transaction-manager="transactionManager"/>
+                </batch:step>
+            </batch:flow>
+        </batch:split>
+
+        <batch:step id="step5" >
+            <batch:tasklet ref="TaskStep5" transaction-manager="transactionManager"/>
+            <batch:next on="*" to="chunk1" />
+            <batch:next on="FAILED" to="fin" />
+        </batch:step>
+         
+        <batch:step id="chunk1" next="fin" >        
+            <batch:tasklet transaction-manager="transactionManager" task-executor="taskExecutor">
+                <batch:chunk    reader="itemReader"
+                                writer="itemWriter"
+                                commit-interval="1"
+                />
+            </batch:tasklet>
+        </batch:step> 
+        
+      
+        
+        <batch:step id="fin">
+            <batch:tasklet ref="finTasklet"/>
+        </batch:step>        
+       
+    </batch:job>
+          
+   
+    <!-- GESTION DE HILOS -->
+    <bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+        <property name="corePoolSize" value="1" />
+        <property name="maxPoolSize"  value="10" />
+    </bean>
+   
+    <!-- DEFINICION DE BEANS -->   
+               
+    <bean id="TaskStep1" class="org.template.negocio.TaskStep1" />
+    <bean id="TaskStep2" class="org.template.negocio.TaskStep2" />
+    <bean id="TaskStep3" class="org.template.negocio.TaskStep3" />
+    <bean id="TaskStep4" class="org.template.negocio.TaskStep4" />
+    <bean id="TaskStep5" class="org.template.negocio.TaskStep5" />
+            
+    <bean id="itemReader" class="org.template.negocio.TaskReader"></bean>
+    <bean id="itemProcess" class="org.template.negocio.TaskProcess"></bean>
+    <bean id="itemWriter" class="org.template.negocio.TaskWriter"></bean>
+    
+    <bean id="DeciderReintentos" class="org.template.negocio.DeciderReintentos"></bean>              
+            
+    <bean id="finTasklet" class="org.template.negocio.TaskFin">
+    </bean>    
+
+    
+
+   
+
+</beans>
