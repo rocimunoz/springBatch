@@ -22,7 +22,7 @@ public class BeanMapper implements FieldSetMapper<BeanExample> {
     private static Logger log = Logger.getLogger(BeanMapper.class);
 
     /**
-     * Funcion para convertir cada linea en un objeto de tipo Config_Agregacion_Hippeis
+     * Funcion para convertir cada linea en un objeto de tipo BeanExample
      *
      * @param fs contiene los campos de una linea
      * @return Devuelve el objeto

@@ -54,7 +54,7 @@
             </value>
         </property>
         <property name="dataSource">
-            <ref bean="dataSourceCSD"/>
+            <ref bean="dataSourceExample"/>
         </property>
     </bean>
     -->
