@@ -51,11 +51,14 @@ public class Inicio {
             //Ultima vez que se hizo un commit
             jobExecution.getLastUpdated();
             
-
+              
         } catch (Exception e) {
             log.error("---- Error proceso " + e.toString());
 
         }
+        
+        System.exit(0);
+       
 
     }
 }

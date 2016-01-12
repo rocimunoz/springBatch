@@ -22,9 +22,9 @@ import org.springframework.beans.factory.annotation.Autowired;
  *
  * @author
  */
-public class TaskWriter implements ItemWriter<Map> {
+public class TaskWriterChunk1 implements ItemWriter<Map> {
 
-    private static Logger log = Logger.getLogger(TaskReader.class);
+    private static Logger log = Logger.getLogger(TaskReaderChunk1.class);
 
    
 

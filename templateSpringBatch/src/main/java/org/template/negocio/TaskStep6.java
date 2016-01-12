@@ -22,23 +22,20 @@ import org.springframework.beans.factory.annotation.Value;
  *
  * @author rmpinedo
  */
-public class TaskStep3 implements Tasklet {
+public class TaskStep6 implements Tasklet {
 
-    static Logger log = Logger.getLogger(TaskStep3.class);
-
-   
+    static Logger log = Logger.getLogger(TaskStep6.class);
 
    
 
     @Override
     public RepeatStatus execute(StepContribution sc, ChunkContext cc) throws Exception {
 
-        log.info("================== INICIO TAREA STEP 3   ================== ");
+        log.info("================== INICIO TAREA STEP 6   ================== ");
         
         try {
 
-        log.info("Soy el step 3");
-        Thread.sleep(4000);
+        log.info("Soy el step 6");
 
         } catch (Exception e) {
             log.error("El fichero  no se ha podido descargar." +  e.getCause().toString());
@@ -50,7 +47,7 @@ public class TaskStep3 implements Tasklet {
 
         }
 
-        log.info("================== FIN TAREA STEP 3   ================== \n");
+        log.info("================== FIN TAREA STEP 6   ================== \n");
 
         return RepeatStatus.FINISHED;
 

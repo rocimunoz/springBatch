@@ -4,8 +4,6 @@
  */
 package org.template.negocio;
 
-
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -20,47 +18,55 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 
-
-
 //@Service
-public class TaskReader implements ItemReader<Map> {
+public class TaskReaderChunk1 implements ItemReader<Map> {
 
-    private static Logger log = Logger.getLogger(TaskReader.class);
+    private static Logger log = Logger.getLogger(TaskReaderChunk1.class);
 
-  
-
-   
+    @Autowired
+    @Qualifier("listaEnteros")
+    private ConcurrentLinkedQueue<Integer> listaEnteros;
 
     public void initServicioReader() {
 
     }
 
-    //private TransactionTemplate transactionTemplate;
     @Override
-    public synchronized  Map read() throws Exception, UnexpectedInputException, ParseException, NonTransientResourceException {
+    public synchronized Map read() throws Exception, UnexpectedInputException, ParseException, NonTransientResourceException {
         Map res = fromLocalQueue();
         return res;
     }
 
-    
     public Map fromLocalQueue() {
 
         log.warn("******* Comienza el Reader : ");
 
         HashMap res = null;
-     
 
         try {
-            
-       
-           
 
-        } catch (Exception ex) {
-            log.warn("" + ex);
+            listaEnteros.size();
+            if (!listaEnteros.isEmpty()) {
+
+                try {
+                   
+                    log.info("******* registro " + listaEnteros.size() + " : ");
+                    Integer element = listaEnteros.element();
+                    if (res== null){
+                        res = new HashMap();
+                    }
+                    res.put("datoProcess", element);
+                    listaEnteros.poll();
+
+                } catch (Exception ex) {
+                    log.warn("" + ex);
+                }
+            }
+
+        } catch (Exception e) {
+
         }
         return res;
     }
-
-   
 
 }

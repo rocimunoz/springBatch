@@ -34,27 +34,33 @@
     </bean>
        
   
-    <!-- DEFINICION DE STEPS -->
+    <!-- **********************LOGICA DEL JOB (STEPS, CHUNKS Y DECISORS) ******************************-->
+  
+    <bean id="listaEnteros" class="java.util.concurrent.ConcurrentLinkedQueue" scope="singleton" />
   
     <batch:job id="templateSpring" job-repository="jobRepository">    
         
+        <!-- Si el step1 va bien, avanza al step2 y si no hace 3 reintentos -->
         <batch:step id="step1" >
             <batch:tasklet ref="TaskStep1" transaction-manager="transactionManager"/>
             <batch:next on="*" to="step2" />
             <batch:next on="FAILED" to="decider" />
         </batch:step>
         
+        <!-- Reintentos del step1, al tercero se va a Fin -->
         <batch:decision decider="DeciderReintentos" id="decider">
             <batch:next on="DECISOR_REINTENTOS" to="step1" />
             <batch:next on="DECISOR_FIN" to="fin" />
         </batch:decision>
         
+        <!-- Si el step2 va bien, avanza al split1, y si no va al Fin -->
         <batch:step id="step2" >
             <batch:tasklet ref="TaskStep2" transaction-manager="transactionManager"/>
             <batch:next on="*" to="split1" />
             <batch:next on="FAILED" to="fin" />
         </batch:step>
          
+        <!-- Split1 realiza 2 tareas en paralelo (step3 y step4). Despues avanza al step5 --> 
         <batch:split id="split1" task-executor="taskExecutor" next="step5">
             <batch:flow>
                 <batch:step id="step3" >
@@ -68,47 +74,108 @@
             </batch:flow>
         </batch:split>
 
+        <!-- Si el step5 va bien, avanza al chunk1 y si no va a Fin -->
         <batch:step id="step5" >
             <batch:tasklet ref="TaskStep5" transaction-manager="transactionManager"/>
             <batch:next on="*" to="chunk1" />
             <batch:next on="FAILED" to="fin" />
         </batch:step>
          
-        <batch:step id="chunk1" next="fin" >        
+        <!-- Un chunk se compone de Reader, [Processor], Writer
+            Gestiona el numero de elementos para cerrar la transaccion--> 
+        <batch:step id="chunk1" next="step6" >        
             <batch:tasklet transaction-manager="transactionManager" task-executor="taskExecutor">
-                <batch:chunk    reader="itemReader"
-                                writer="itemWriter"
+                <batch:chunk    reader="itemReaderChunk1"
+                               processor="itemProcessChunk1"
+                                writer="itemWriterChunk1"
                                 commit-interval="1"
                 />
             </batch:tasklet>
         </batch:step> 
         
+        <!-- Si el step6 va bien, avanzamos al chunk2 y si no a Fin -->
+        <batch:step id="step6" >
+            <batch:tasklet ref="TaskStep6" transaction-manager="transactionManager"/>
+            <batch:next on="*" to="chunk2" />
+            <batch:next on="FAILED" to="fin" />
+        </batch:step>
       
+      
+        <batch:step id="chunk2" next="fin" >        
+            <batch:tasklet transaction-manager="transactionManager" task-executor="taskExecutor">
+                <batch:chunk    reader="itemReaderChunk2"
+                                writer="itemWriterChunk2"
+                                commit-interval="${commitInterval}"
+                />
+            </batch:tasklet>
+        </batch:step>
         
         <batch:step id="fin">
             <batch:tasklet ref="finTasklet"/>
         </batch:step>        
        
     </batch:job>
-          
+     
+    <!-- **************************************************************************************-->      
    
-    <!-- GESTION DE HILOS -->
+   
+   
+    <!-- ******************GESTION DE HILOS **************************************************-->
     <bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
         <property name="corePoolSize" value="1" />
         <property name="maxPoolSize"  value="10" />
     </bean>
+   <!-- **************************************************************************************-->
    
-    <!-- DEFINICION DE BEANS -->   
-               
+   
+   
+    <!-- ***************** DEFINICION DE BEANS ***************************-->   
+             
+    <!-- Definicion de Steps -->                
     <bean id="TaskStep1" class="org.template.negocio.TaskStep1" />
     <bean id="TaskStep2" class="org.template.negocio.TaskStep2" />
     <bean id="TaskStep3" class="org.template.negocio.TaskStep3" />
     <bean id="TaskStep4" class="org.template.negocio.TaskStep4" />
     <bean id="TaskStep5" class="org.template.negocio.TaskStep5" />
+    <bean id="TaskStep6" class="org.template.negocio.TaskStep6" />
             
-    <bean id="itemReader" class="org.template.negocio.TaskReader"></bean>
-    <bean id="itemProcess" class="org.template.negocio.TaskProcess"></bean>
-    <bean id="itemWriter" class="org.template.negocio.TaskWriter"></bean>
+    <!-- Definicion de beans del chunk1 -->
+    <bean id="itemReaderChunk1" class="org.template.negocio.TaskReaderChunk1"></bean>
+    <bean id="itemProcessChunk1" class="org.template.negocio.TaskProcessChunk1"></bean>
+    <bean id="itemWriterChunk1" class="org.template.negocio.TaskWriterChunk1"></bean>
+    
+    <!-- Definicion de beans del chunk2 -->
+    <bean id="itemReaderChunk2" class="org.springframework.batch.item.file.MultiResourceItemReader">
+        <property name="resources">
+            <value>classpath:${dirLocal}*.csv</value>
+        </property>
+        <property name="strict" value="false"/>
+        <property name="delegate" ref="FlatFileItemReader" />
+    </bean>
+    
+    <bean id="itemWriterChunk2" class="org.template.negocio.TaskWriterChunk2" />        
+   
+    
+    <bean id="FlatFileItemReader" class="org.springframework.batch.item.file.FlatFileItemReader" >
+        <property name="lineMapper">
+            <bean class="org.springframework.batch.item.file.mapping.DefaultLineMapper">
+                <property name="lineTokenizer">
+                    <bean class="org.template.negocio.util.CustomDelimitedLineTokenizer">
+                        <property name="delimiter" value="${caracterSeparador}" />
+                        <property name="quoteCharacter" value="'" />
+                        <property name="names" value="${ordenCamposFichero}" />
+                    </bean>
+                </property>
+                <property name="fieldSetMapper" ref="fieldSetMapper" />
+	   
+            </bean>
+        </property>
+    </bean>
+    
+    <!-- Clase que mapea la linea del fichero a objeto Hippeis -->
+    <bean id="fieldSetMapper" class="org.template.negocio.util.BeanMapper"/>
+    
+    
     
     <bean id="DeciderReintentos" class="org.template.negocio.DeciderReintentos"></bean>              
             
