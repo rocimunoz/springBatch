@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js – The HTML Presentation Framework</title>
+		<title>SpringBatch – Slide</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -56,15 +56,16 @@
 				<!-- Que es un proceso batch -->
 				<section>
 					
-					<h2 align="left"><font color="#e69138">Qué es un Proceso Batch</font></h2></p>
-					<p> 
-					<div align="left">Ejecucion sin la supervision  del usuario</div>
-					<div align="left">Ejecucion fuera del horario laboral</div>
-					<div align="left">Procesan gran cantidad de datos</div>
-					<div align="left">Son tareas repetitivas</div>
-					<div align="left">Ej: procesamiento datos bancarios, facturas, imágenes</div>
+					<h2 align="left"><font color="#e69138">Qué es un Proceso Batch</font></h2>
 					
-					</p>
+					<div align="left">
+					<p>Ejecucion sin la supervision  del usuario</p>
+					<p>Ejecucion fuera del horario laboral</p>
+					<p>Procesan gran cantidad de datos</p>
+					<p>Son tareas repetitivas</p>
+					<p>Ej: procesamiento datos bancarios, facturas, imágenes</p>
+					
+					</div>
 					
 					
 				</section>
@@ -73,7 +74,7 @@
 				<section>
 					
 					<section>
-						<h2 align="left">Caracteristicas</h2>
+						<h2 align="left"><font color="#e69138">Caracteristicas proceso batch</font></h2>
 						<div align="left"> 
 							<ol align="left">
 								<li align="left">Workflow de tareas</li>
@@ -104,7 +105,7 @@
 						<p>Hay que pensar qué hacer ante un fallo y como gestionar las transacciones. </p>
 						<p>¿Qué cantidad de datos voy a tener que gestionar?</p>
 						<p>Ante un fallo, ¿hago rollback? ¿persisto los datos?</p>
-						¿Hasta donde hago rollback?</p>
+						<p>¿Hasta donde hago rollback?</p>
 
 
 
@@ -149,23 +150,43 @@
 					
 				</section>
 
+				<!-- SpringBatch-->
 				<section>
 					<section>
-					<h2 align="left"><font color="#e69138">SpringBatch</font></h2></p>
+					<h2 align="left"><font color="#e69138">SpringBatch</font></h2>
 					<div align="left">
-							Framework opensource para la creacion de procesos batch<br/>
-							Componente Spring enfocado a la creación de procesos batch<br/>
-							Escalable y facil de personalizar<br/>
+							<p>Framework opensource para la creacion de procesos batch</p>
+							<p>Escalable y facil de personalizar</p>
+							<p><a href="http://docs.spring.io/spring-batch/reference/html/">Documentacion Spring Batch</a></p>
 					
-						
-						
-
-					</div>	
+					</div>	<img align="center" data-src="img/favicon.ico" alt="Spring">
 					</section>
 					<section>bla bla</section>
 				</section>
 
-				
+				<!-- Arquitectura -->
+				<section>
+					<section>
+					<h2 align="left"><font color="#e69138">Arquitectura</font></h2>
+					<img align="center" data-src="img/estructura.png" alt="Spring">
+					</section>
+					
+					<!-- JobRepository -->
+					<section>
+						<h3>Job Repository</h3>
+						Almacena en tiempo de ejecución información sobre los jobs
+					</section>
+					<!-- JobLauncher -->
+					<section>
+						<h3>Job Launcher</h3>
+						Responsable de ejecutar cada uno de los jobs
+					</section>
+					<!-- Job -->
+					<section>
+						<h3>Job</h3>
+						Proceso de ejecución formado por uno o más steps
+					</section>
+				</section>				
 
 				
 
