@@ -27,26 +27,24 @@
           http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch-2.1.xsd">
 
     
-    <context:component-scan base-package="org.template"/>
+    <context:component-scan base-package="eon.gBal"/>
    
     
     <!-- CONFIGURACION DE CONEXION CON LA BASE DE DATOS  -->       
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
-                <value>classpath:config/template/SqlMapConfig.properties</value>
-                <value>classpath:config/template/prj.properties</value>
+                <value>classpath:config/viesgo/cfg/SqlMapConfig.properties</value>
+                <value>classpath:config/viesgo/cfg/prj.properties</value>
             </list>
         </property>
     </bean>
 
     <!-- ************************* CONEXION 1:  ****************************************-->        
-<!--  
     <bean id="sqlMapClientTemplate" class="org.springframework.orm.ibatis.SqlMapClientTemplate" >
         <property name="sqlMapClient" ref="sqlMapClient"/>
     </bean>
--->
-<!--
+
     <bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
         <property name="configLocation">
             <value>
@@ -54,15 +52,12 @@
             </value>
         </property>
         <property name="dataSource">
-            <ref bean="dataSourceExample"/>
+            <ref bean="dataSourceCSD"/>
         </property>
     </bean>
-    -->
-
-
-    <bean id="dataSourceTemplate" class="org.apache.commons.dbcp.BasicDataSource"
+    
+    <bean id="dataSourceCSD" class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close">
-        
         <property name="driverClassName">
             <value>${driver}</value>
         </property>
@@ -115,12 +110,29 @@
 
     
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-         <property name="dataSource">
-            <ref bean="dataSourceTemplate"/>
+        <property name="dataSource">
+            <ref bean="dataSourceCSD"/>
         </property>
     </bean>     
     
+    <bean id="CentaxDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+        <property name="transactionManager">
+            <ref bean="transactionManager"/>
+        </property>
+        <property name="target">
+            <ref bean="CentaxDaoImpl"/>
+        </property>
+        <property name="transactionAttributeSource">
+            <ref local="defaultTxAttributes"/>
+        </property>
+    </bean>
                                            
+    <bean id="CentaxDaoImpl" class="viesgo.csd.dao.impl.CentaxDaoImpl">
+        <property name="sqlMapClient">
+            <ref local="sqlMapClient"/>
+        </property>
+    </bean> 
+
                    
     <bean id="defaultTxAttributes"
           class="org.springframework.transaction.interceptor.NameMatchTransactionAttributeSource">
@@ -143,8 +155,8 @@
 
 
     <bean id="jobExplorer" class="org.springframework.batch.core.explore.support.JobExplorerFactoryBean">
-       <property name="dataSource" ref="dataSourceTemplate"/>
-        
+       
+        <property name="dataSource" ref="dataSourceCSD"/>
     </bean>
         
         

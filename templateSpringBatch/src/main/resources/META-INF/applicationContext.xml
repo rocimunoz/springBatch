@@ -27,109 +27,160 @@
           http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch-3.0.xsd">
 
     
-    <context:component-scan base-package="org.template"/>
-  
+    <context:component-scan base-package="com.template"/>
+    <!--<context:annotation-config/>-->
+
+    <!--<bean id="listaPcPendientes" class="java.util.concurrent.ConcurrentLinkedQueue" scope="singleton" />-->
+   
+    <!--
+        Un ejecutador de tareas. A través de esta clase es que se inicia la
+        ejecución de las taras batch.
+    -->
     <bean id="jobLauncher" class="org.springframework.batch.core.launch.support.SimpleJobLauncher">
         <property name="jobRepository" ref="jobRepository" />
     </bean>
        
-  
-    <!-- **********************LOGICA DEL JOB (STEPS, CHUNKS Y DECISORS) ******************************-->
-  
    
-    <batch:job id="templateSpring" job-repository="jobRepository">    
+    <batch:job id="cargaTemplate" job-repository="jobRepository">    
         
-        <!-- Si el step1 va bien, avanza al step2 y si no hace 3 reintentos -->
-        <batch:step id="extraccionDatosINE" >
-            <batch:tasklet ref="TaskExtraccionDatosINE" transaction-manager="transactionManager"/>
-            <batch:next on="*" to="chunkDatosINE" />
+        <batch:step id="AccesoFTP" >
+            <batch:tasklet ref="TaskAccesoFTP" transaction-manager="transactionManager"/>
+            <batch:next on="*" to="descomprimirFichero" />
             <batch:next on="FAILED" to="decider" />
         </batch:step>
         
-        <!-- Reintentos del step1, al tercero se va a Fin -->
-        <batch:decision decider="DeciderReintentos" id="decider">
-            <batch:next on="DECISOR_REINTENTOS" to="step1" />
+        <batch:decision decider="DeciderReintentosFTP" id="decider">
+            <batch:next on="DECISOR_REINTENTOS" to="AccesoFTP" />
             <batch:next on="DECISOR_FIN" to="fin" />
+
         </batch:decision>
+
         
-     
-         
-         
-        <!-- Un chunk se compone de Reader, [Processor], Writer
-        Gestiona el numero de elementos para cerrar la transaccion--> 
-       
-        <!--
-         <batch:step id="chunk1" next="step6" >        
-             <batch:tasklet transaction-manager="transactionManager" task-executor="taskExecutor">
-                 <batch:chunk    reader="itemReaderChunk1"
-                                processor="itemProcessChunk1"
-                                 writer="itemWriterChunk1"
-                                 commit-interval="1"
-                 />
-             </batch:tasklet>
-         </batch:step> 
-        --> 
-      
-        <batch:step id="chunkDatosINE" next="fin" >        
+        <batch:step id="descomprimirFichero">
+            <batch:tasklet ref="TaskDescomprimirFichero"/>
+            <batch:next on="*" to="deleteBBDD" />
+            <batch:next on="FAILED" to="fin" />
+        </batch:step>
+        
+        <batch:step id="deleteBBDD" >
+            <batch:tasklet ref="TaskDeleteBBDD" transaction-manager="transactionManager"/>
+            <batch:next on="*" to="insertaCSD" />
+            <batch:next on="FAILED" to="fin" />
+        </batch:step>
+        
+        
+          
+        <batch:step id="insertaTemplate" next="deleteFTPFiles" >        
             <batch:tasklet transaction-manager="transactionManager" task-executor="taskExecutor">
-                <batch:chunk    reader="itemReaderDatosINE"
-                                writer="itemWriterDatosINE"
+                <batch:chunk    reader="itemReader"
+                                writer="itemWriter"
                                 commit-interval="${commitInterval}"
                 />
             </batch:tasklet>
         </batch:step>
+        
+        <batch:step id="deleteFTPFiles" >
+            <batch:tasklet ref="TaskDeleteFTPFiles" transaction-manager="transactionManager"/>
+            <batch:next on="*" to="deleteLocalFiles" />
+            <batch:next on="FAILED" to="fin" />
+        </batch:step>
+        
+        <batch:step id="deleteLocalFiles" >
+            <batch:tasklet ref="TaskDeleteLocalFiles" transaction-manager="transactionManager"/>
+            <batch:next on="*" to="fin" />
+        </batch:step>
+        
         
         <batch:step id="fin">
             <batch:tasklet ref="finTasklet"/>
         </batch:step>        
        
     </batch:job>
-     
-    <!-- **************************************************************************************-->      
-   
-   
-   
-    <!-- ******************GESTION DE HILOS **************************************************-->
-    <bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
-        <property name="corePoolSize" value="1" />
-        <property name="maxPoolSize"  value="10" />
+          
+    <bean id="DeciderReintentosFTP" class="com.template.negocio.DeciderReintentosFTP">
+        
     </bean>
-    <!-- **************************************************************************************-->
-   
-   
-   
-    <!-- ***************** DEFINICION DE BEANS ***************************-->   
-             
-    <bean id="itemReaderDatosINE"
-          class="org.springframework.batch.item.file.FlatFileItemReader">
-             
-        <property name="resource">
-            <value>file:./ficheros/*.json</value>
-        </property>
-        <property name="recordSeparatorPolicy"
-                  ref="productRecordSeparatorPolicy"/>
-        <property name="lineMapper" ref="productLineMapper"/>
-    </bean>
-
-    <bean id="productRecordSeparatorPolicy" class="org.springframework.batch.item.file.separator.JsonRecordSeparatorPolicy"/>
-
-    <bean id="productLineMapper"
-          class="com.manning.sbia.ch06.WrappedJsonLineMapper">
-        <property name="delegate" ref="targetProductsLineMapper"/>
-    </bean>
-
-    <bean id="targetProductsLineMapper"
-          class="org.springframework.batch.item.file.mapping.JsonLineMapper"/>
-
-   <!--<bean id="productItemWriter" class="com.manning.sbia.ch06.DummyProductItemWriter"/>-->
-
-   
-   
-   
     
-    <bean id="DeciderReintentos" class="org.template.negocio.DeciderReintentos"></bean>              
-            
-    <bean id="finTasklet" class="org.template.negocio.TaskFin">
+    <bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+        <property name="corePoolSize" value="${corePoolSize}" />
+        <property name="maxPoolSize"  value="${maxPoolSize}" />
+    </bean>
+      
+    <!-- Tarea de borrado de tablas -->  
+    <bean id="TaskDeleteBBDD" class="com.template.negocio.TaskDeleteBBDD">            
+       
+    </bean>
+    
+    <!-- Tarea de borrado ficheros locales -->  
+    <bean id="TaskDeleteLocalFiles" class="com.template.negocio.TaskDeleteLocalFiles">            
+       
+    </bean>
+      
+    <bean id="TaskDeleteFTPFiles" class="com.template.negocio.TaskDeleteFTPFiles">            
+       
+    </bean>   
+      
+    <!-- Tarea de Acceso al FTP -->  
+    <bean id="TaskAccesoFTP" class="com.template.negocio.TaskAccesoFTP">            
+       
+    </bean>
+    
+    <!-- Tarea para descomprimir el fichero en una ruta local -->
+    <bean id="TaskDescomprimirFichero" class="com.template.negocio.TaskUnzipFiles">            
+       
+    </bean>
+                         
+    
+    <bean id="itemReader" class="org.springframework.batch.item.file.MultiResourceItemReader">
+        <!--<bean id="itemReader" class="org.springframework.batch.item.file.MultiResourceItemReader">-->
+        <property name="resources">
+            <value>file:./ficheros/*.csv</value>
+        </property>
+        <property name="strict" value="false"/>
+        <!--<property name="resources" value="classpath:${dirLocal}*.csv" />-->
+        <!--<property name="resources" value="classpath:${dirLocal}*.csv" />-->
+        
+        <!--<property name="resources" value="ficheros/*" />-->
+        <!--<property name="resources" value="${dirLocal}*.csv" /> OK-->
+        <!--
+        <property name="resources">
+            <value>./ficheros/*.csv</value>
+        </property>
+        -->
+
+        
+        <property name="delegate" ref="FlatFileItemReader" />
+    </bean>
+    
+    
+    <!-- Reader de extraccion de datos -->
+    <bean id="FlatFileItemReader" class="org.springframework.batch.item.file.FlatFileItemReader" >
+        <property name="lineMapper">
+            <bean class="org.springframework.batch.item.file.mapping.DefaultLineMapper">
+                <property name="lineTokenizer">
+                    <bean class="com.template.negocio.CustomDelimitedLineTokenizer">
+                        <property name="delimiter" value="${caracterSeparador}" />
+                        <property name="quoteCharacter" value="'" />
+                        <property name="names" value="${ordenCamposFichero}" />
+                    </bean>
+                </property>
+                <property name="fieldSetMapper" ref="fieldSetMapper" />
+	   
+            </bean>
+        </property>
+       
+        
+	
+    </bean>
+    
+    <!-- Clase que mapea la linea del fichero a objeto Hippeis -->
+    <bean id="fieldSetMapper" class="com.template.negocio.Config_Agregacion_Hippeis_Mapper"/>
+    
+    <bean id="itemWriter" class="com.template.negocio.ServicioWriter">    
+       
+    </bean>    
+       
+    <bean id="finTasklet" class="com.template.negocio.TaskFin">
     </bean>    
 
     

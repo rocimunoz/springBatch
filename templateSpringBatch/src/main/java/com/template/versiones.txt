@@ -1,0 +1,12 @@
+*******************************************************************************
+** Sumario de cambios por version, primera version controlada 1.0.0          **
+** La version se debe cambiar en el fichero Commons.java y el Manifest.mf    **
+** Agregar la siguiente linea en las propiedades de packaging del proyecto   **
+** ,**/versiones.txt,**/manifest.mf                                          **
+** Asignar manifest.file=src/eon/tras/manifest.mf en el                      **
+** "nbproject/project.properties" para usar el manifest propio.              **
+** No poner acentos para evitar fallos de cambio de charset                  **
+*******************************************************************************
+    1.00 - Primera version de la aplicacion.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*******************************************************************************

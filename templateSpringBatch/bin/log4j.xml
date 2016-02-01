@@ -10,7 +10,7 @@
     </appender>
 
     <appender name="fichero" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="File" value="./CargadorInventarioCSD.log"/>
+        <param name="File" value="./springbatchTemplate.log"/>
         <param name="DatePattern" value="'.'yyyy-MM-dd"/>
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern" value="%d{dd/MM/yyyy HH\:mm\:ss} %-5p %m%n"/>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap
+     PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+     "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap>
+
+    <!-- ********** Thu Jun 12 13:27:56 CEST 2014 ************* -->
+
+    <!-- ****************************************************** --> 
+
+
+    <!-- ****************************************************** -->
+
+<!--
+    <delete id="delete-Hippeis">
+        
+        DELETE FROM ${owner-centax}.CONFIG_AGREGACION_HIPPEIS
+        
+    </delete>
+    -->
+    
+     <delete id="delete-Hippeis">
+        
+        TRUNCATE table ${owner-centax}.CONFIG_AGREGACION_HIPPEIS
+        
+    </delete>
+
+    <insert id="insert-ListHippeis" parameterClass="java.util.HashMap">
+
+        INSERT INTO ${owner-centax}.CONFIG_AGREGACION_HIPPEIS
+        (
+        ID_COND_AGRE,
+        GUID_AGREGA,
+        ID_VAR_MV_PF,
+        F_DESDE,
+        F_HASTA,
+        ID_DISTRIBUIDORA, 
+        ID_COMERCIALIZADORA,
+        AUTOPRODUCTOR, 
+        ID_TIPO_NTT,
+        ID_TARIFA_ACCESO,
+        ID_DH_ACCESO, 
+        ID_PROVINCIA, 
+        CUPS_PF,
+        CUPS_PM, 
+        DESCRIPCION_PF, 
+        GUID_PF, 
+        GUID_PM, 
+        PC_P1,
+        PC_P2,
+        PC_P3,
+        PC_P4,
+        PC_P5,
+        PC_P6,
+        TIPO_FRONTERA,
+        ID_LINEA,
+        ID_DH_EQUIPO,
+        FECHA_GBD 
+        )
+
+        <iterate property="listaHippeis" open="" conjunction=" union all " close="">
+            select 
+            #listaHippeis[].id_cond_agre:NUMERIC#,
+            #listaHippeis[].guid_agrega:NUMERIC#,
+            #listaHippeis[].id_var_mv_pf:VARCHAR#,
+            #listaHippeis[].f_desde:DATE#,
+            #listaHippeis[].f_hasta:DATE#,
+            #listaHippeis[].id_distribuidora:VARCHAR#,
+            #listaHippeis[].id_comercializadora:VARCHAR#,
+            #listaHippeis[].autoproductor:VARCHAR#,
+            #listaHippeis[].id_tipo_ntt:NUMERIC#,
+            #listaHippeis[].id_tarifa_acceso:NUMERIC#,
+            #listaHippeis[].id_dh_acceso:NUMERIC#,
+            #listaHippeis[].id_provincia:NUMERIC#,
+            #listaHippeis[].cups_pf:VARCHAR#,
+            #listaHippeis[].cups_pm:VARCHAR#,
+            #listaHippeis[].descripcion_pf:VARCHAR#,
+            #listaHippeis[].guid_pf:NUMERIC#,
+            #listaHippeis[].guid_pm:NUMERIC#,
+            #listaHippeis[].pc_p1:DOUBLE#,
+            #listaHippeis[].pc_p2:DOUBLE#,
+            #listaHippeis[].pc_p3:DOUBLE#,
+            #listaHippeis[].pc_p4:DOUBLE#,
+            #listaHippeis[].pc_p5:DOUBLE#,
+            #listaHippeis[].pc_p6:DOUBLE#,
+            #listaHippeis[].tipo_frontera:NUMERIC#,
+            #listaHippeis[].id_linea:NUMERIC#,
+            #listaHippeis[].id_dh_equipo:NUMERIC#,
+            #listaHippeis[].fecha_gbd:DATE# FROM DUAL
+        </iterate>
+                         
+
+    </insert>
+   
+</sqlMap>

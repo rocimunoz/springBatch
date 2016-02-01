@@ -5,7 +5,6 @@
     <artifactId>templateSpringBatch</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>	
         <org.springframework.version>3.0.5.RELEASE</org.springframework.version>
@@ -13,29 +12,74 @@
     </properties>
     
     <dependencies>
-        <!-- logger -->
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.8</version>
-        </dependency>
         
-        <!-- oracle -->
-          <dependency>
+        <dependency>
             <groupId>com.oracle</groupId>
             <artifactId>ojdbc14</artifactId>
             <version>10.2.0.4.0</version>
         </dependency>
+       
         
-         <!-- commons-dbcp -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+        
+        <!-- commons-dbcp -->
         <dependency>
             <groupId>commons-dbcp</groupId>
             <artifactId>commons-dbcp</artifactId>
             <version>1.4</version>
         </dependency>
         
+        <!-- eon ftp -->
+        <dependency>
+            <groupId>com.enterprisedt</groupId>
+            <artifactId>edtftpj-pro</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.enterprisedt</groupId>
+            <artifactId>license</artifactId>
+            <version>1.0</version>
+        </dependency>       
         
-         <!-- Spring Batch dependencies -->
+        <!-- Dependencia de IBatis -->
+        <dependency>
+            <groupId>org.apache.ibatis</groupId>
+            <artifactId>ibatis-sqlmap</artifactId>
+            <version>2.3.4.726</version>
+        </dependency>
+                
+        <dependency>
+            <groupId>com.ibatis</groupId>
+            <artifactId>ibatis2-common</artifactId>
+            <version>2.1.7.597</version>
+        </dependency>
+                
+        <dependency>
+            <groupId>com.ibatis</groupId>
+            <artifactId>ibatis2-dao</artifactId>
+            <version>2.1.7.597</version>
+        </dependency>
+            
+        <!-- Versiones -->
+        <dependency>
+            <groupId>cic</groupId>
+            <artifactId>Versiones</artifactId>
+            <version>2.0.1</version>                    
+        </dependency> 
+            
+        <!-- Log4j -->               
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.8</version>
+        </dependency>
+        
+        <!-- Spring Batch dependencies -->
         <dependency>
             <groupId>org.springframework.batch</groupId>
             <artifactId>spring-batch-core</artifactId>
@@ -113,12 +157,11 @@
             <scope>test</scope>
         </dependency>
         
+        
     </dependencies>
     
     <build>
-        
         <plugins>
-            <!-- MAVEN COMPILER: se utiliza para indicar como compilar el proyecto -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -127,15 +170,13 @@
                     <source>1.7</source>
                     <target>1.7</target>
                 </configuration>
-            </plugin>    
-            
-            <!-- MAVEN JAR: Plugin para generar el jar del proyecto -->
+            </plugin>                      
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>2.4</version>
                 <configuration>
-                    <!-- Excluyo los properties para que no vayan dentro del jar -->
+                    <!-- No queremos que los properties vayan dentro del .jar -->
                     <excludes>
                         <exclude>config/</exclude>
                         <exclude>ficheros/</exclude>
@@ -149,20 +190,43 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>org.template.Inicio</mainClass>
+                            <mainClass>viesgo.csd.Inicio</mainClass>
 
                         </manifest>
                         <!-- Añadimos al classpath el directorio donde irán los .properties -->
                         <manifestEntries>
-                            <Class-Path>config/template/</Class-Path>
+                            <Class-Path>config/viesgo/cfg/</Class-Path>
                         </manifestEntries>
                     </archive>
                 </configuration>
-            </plugin>       
+            </plugin>                       
+
+			
+
+            <!-- Copying project dependencies FOR JProfiler -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.8</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/alternateLocation</outputDirectory>
+                            <overWriteReleases>false</overWriteReleases>
+                            <overWriteSnapshots>false</overWriteSnapshots>
+                            <overWriteIfNewer>true</overWriteIfNewer>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
-        
-        <!-- Indicamos al proyecto donde debe buscar los recursos -->
-         <resources>
+        <resources>
             <resource> 
                 <directory>bin</directory>
             </resource>   
@@ -173,5 +237,5 @@
                                 
         </resources>
     </build>
-    
+   
 </project>
