@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<!--<link rel="stylesheet" href="css/theme/black.css" id="theme">-->
+		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+<!--http://docs.spring.io/spring-batch/reference/html/spring-batch-intro.html-->
+<!-- http://eltamiz.com/elcedazo/2009/04/27/la-ventana-batch/-->
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					
+					<h3>Procesamiento de datos con</h3>
+					<h1><font color="#e69138">SpringBatch</font></h1>
+					<p>
+						<small><a href="http://www.coderscantabria.com">Coders Cantabria</a> / <a href="http://twitter.com/roci_munoz">@roci_munoz</a></small>
+					</p>
+				</section>
+
+
+				<!-- Que es un proceso batch -->
+				<section>
+					
+					<h2 align="left"><font color="#e69138">Qué es un Proceso Batch</font></h2></p>
+					<p> 
+					<div align="left">Ejecucion sin la supervision  del usuario</div>
+					<div align="left">Ejecucion fuera del horario laboral</div>
+					<div align="left">Procesan gran cantidad de datos</div>
+					<div align="left">Son tareas repetitivas</div>
+					<div align="left">Ej: procesamiento datos bancarios, facturas, imágenes</div>
+					
+					</p>
+					
+					
+				</section>
+
+				<!-- Caracteristicas de un proceso batch -->
+				<section>
+					
+					<section>
+						<h2 align="left">Caracteristicas</h2>
+						<div align="left"> 
+							<ol align="left">
+								<li align="left">Workflow de tareas</li>
+								<li align="left">Gestión de Transacciones</li>
+								<li align="left">Tratamiento de Excepciones</li>
+								<li align="left">Hilos de ejecucion</li>
+								<li align="left">Bloqueos</li>
+							</ol>
+							
+					
+						</div>
+					</section>
+					
+					<!-- workflow -->
+					<section>
+						<div align="left">
+						<h3>1. Workflow de tareas</h3>
+						<p>Lo primero es saber qué tareas va a realizar mi proceso.</p>
+						<p>Tareas secuenciales, en paralelo, repetitivas, dependientes de otras tareas ...<p/>
+					</div>
+					</section>
+
+					<!-- transacciones -->
+					<section>
+						
+						<div align="left">
+						<h3>2. Gestion de Transacciones</h3>
+						<p>Hay que pensar qué hacer ante un fallo y como gestionar las transacciones. </p>
+						<p>¿Qué cantidad de datos voy a tener que gestionar?</p>
+						<p>Ante un fallo, ¿hago rollback? ¿persisto los datos?</p>
+						¿Hasta donde hago rollback?</p>
+
+
+
+						
+					</div>
+					</section>
+
+					<!-- excepciones -->
+					<section>
+						
+						<div align="left">
+						<h3>3. Tratamiento de Excepciones</h3>
+						<p>Caidas de conexión. ¿Reintento la conexión o finalizo el batch?</p>
+						<p>Ante un fallo de negocio, ¿termino la ejecución o continuo?</p>
+
+						
+					</div>
+					</section>
+					<!-- Hilos de ejecucion -->
+					<section>
+						
+						<div align="left">
+						<h3>4. Hilos de ejecucion</h3>
+						<p>¿Cuánto tiempo tengo para que mi proceso termine?</p>
+						<p>¿Tiene que terminar a una hora determinada?</p>
+						<p>¿Necesita el usuario los datos disponibles a primera hora de la mañana?</p>
+						<p>¿Son necesarios hilos?¿Tengo memoria suficiente en la máquina para soportar X hilos de ejecución?</p>
+						
+					</div>
+					</section>
+
+					<!-- Bloqueos -->
+					<section>
+						
+						<div align="left">
+						<h3>5. Bloqueos</h3>
+						<p>Pensar en la estrategia de bloqueos a utilizar si se producen</p>
+						<p>Patrón optimistic locking</p>
+						<p>Patrón pesismistic locking</p>
+					</div>
+					</section>
+					
+				</section>
+
+				<section>
+					<section>
+					<h2 align="left"><font color="#e69138">SpringBatch</font></h2></p>
+					<div align="left">
+							Framework opensource para la creacion de procesos batch<br/>
+							Componente Spring enfocado a la creación de procesos batch<br/>
+							Escalable y facil de personalizar<br/>
+					
+						
+						
+
+					</div>	
+					</section>
+					<section>bla bla</section>
+				</section>
+
+				
+
+				
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
