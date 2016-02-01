@@ -34,8 +34,8 @@
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
-                <value>classpath:config/viesgo/cfg/SqlMapConfig.properties</value>
-                <value>classpath:config/viesgo/cfg/prj.properties</value>
+                <value>classpath:config/template/cfg/SqlMapConfig.properties</value>
+                <value>classpath:config/template/cfg/prj.properties</value>
             </list>
         </property>
     </bean>
@@ -127,7 +127,7 @@
         </property>
     </bean>
                                            
-    <bean id="CentaxDaoImpl" class="viesgo.csd.dao.impl.CentaxDaoImpl">
+    <bean id="CentaxDaoImpl" class="com.template.dao.impl.CentaxDaoImpl">
         <property name="sqlMapClient">
             <ref local="sqlMapClient"/>
         </property>

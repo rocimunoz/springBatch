@@ -190,12 +190,12 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>viesgo.csd.Inicio</mainClass>
+                            <mainClass>com.template.Inicio</mainClass>
 
                         </manifest>
                         <!-- Añadimos al classpath el directorio donde irán los .properties -->
                         <manifestEntries>
-                            <Class-Path>config/viesgo/cfg/</Class-Path>
+                            <Class-Path>config/template/cfg/</Class-Path>
                         </manifestEntries>
                     </archive>
                 </configuration>

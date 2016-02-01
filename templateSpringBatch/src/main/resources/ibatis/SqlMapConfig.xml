@@ -4,7 +4,7 @@
     "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
 <sqlMapConfig>
     <!-- Fichero properties con configuración de BBDD y maps para SqlMapConfig -->
-    <properties resource="config/viesgo/cfg/SqlMapConfig.properties" />
+    <properties resource="config/template/cfg/SqlMapConfig.properties" />
     <settings
         cacheModelsEnabled="true"
         enhancementEnabled="true"
