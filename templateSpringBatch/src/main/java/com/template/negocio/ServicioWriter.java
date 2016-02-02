@@ -16,19 +16,19 @@ import org.apache.log4j.Logger;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
-import com.template.dao.impl.CentaxDaoImpl;
-import com.template.dto.Config_Agregacion_Hippeis;
+import com.template.dao.impl.ApellidosDaoImpl;
+import com.template.dto.Apellidos;
 
 /**
  *
  * @author
  */
-public class ServicioWriter implements ItemWriter<Config_Agregacion_Hippeis> {
+public class ServicioWriter implements ItemWriter<Apellidos> {
 
     private static Logger log = Logger.getLogger(ServicioWriter.class);
 
     @Autowired
-    private CentaxDaoImpl centaxDao;
+    private ApellidosDaoImpl apellidosDao;
 
     /**
      * Variable contador de lineas del fichero. Tiene scope singleton
@@ -41,7 +41,7 @@ public class ServicioWriter implements ItemWriter<Config_Agregacion_Hippeis> {
      * @param list Se recibe una lista de Objetos. Se envian al Dao para insertar en BBDD
      * @throws Exception
      */
-    public void write(List<? extends Config_Agregacion_Hippeis> list) throws Exception {
+    public void write(List<? extends Apellidos> list) throws Exception {
 
         try {
 
@@ -50,13 +50,13 @@ public class ServicioWriter implements ItemWriter<Config_Agregacion_Hippeis> {
             }
             contadorPuntosTraspasados = contadorPuntosTraspasados + list.size();
 
-            List<Config_Agregacion_Hippeis> listaHippeis = new ArrayList<Config_Agregacion_Hippeis>();
+            List<Apellidos> listaHippeis = new ArrayList<Apellidos>();
 
             log.info("Insertados " + list.size() + " registros de " + contadorPuntosTraspasados);
 
             if (list != null && !list.isEmpty()) {
 
-                for (Config_Agregacion_Hippeis hippeis : list) {
+                for (Apellidos hippeis : list) {
 
                     listaHippeis.add(hippeis);
 
@@ -75,14 +75,14 @@ public class ServicioWriter implements ItemWriter<Config_Agregacion_Hippeis> {
     }
 
     /**
-     * Insercion de un objeto Config_Agregacion_Hippeis
+     * Insercion de un objeto Apellidos
      *
      * @param hippeis
      */
-    private void insertarObjeto(Config_Agregacion_Hippeis hippeis) {
+    private void insertarObjeto(Apellidos hippeis) {
 
         try {
-            centaxDao.insertarBeanHippeis(hippeis);
+            apellidosDao.insertarBeanApellidos(hippeis);
         } catch (Exception ex) {
             java.util.logging.Logger.getLogger(ServicioWriter.class.getName()).log(Level.SEVERE, null, ex);
             log.error("Se ha producido un error al insertar" + ex.getMessage());
@@ -91,16 +91,16 @@ public class ServicioWriter implements ItemWriter<Config_Agregacion_Hippeis> {
     }
 
     /**
-     * Funcion que inserta una lista de objetos Config_Agregacion_Hippeis en BBDD
+     * Funcion que inserta una lista de objetos Apellidos en BBDD
      *
      * @param lista
      */
-    private void insertarLista(List<Config_Agregacion_Hippeis> lista) {
+    private void insertarLista(List<Apellidos> lista) {
 
         try {
             HashMap hm = new HashMap();
-            hm.put("listaHippeis", lista);
-            centaxDao.insertarListaHippeis(hm);
+            hm.put("listaApellidos", lista);
+            apellidosDao.insertarListaApellidos(hm);
         } catch (Exception ex) {
             java.util.logging.Logger.getLogger(ServicioWriter.class.getName()).log(Level.SEVERE, null, ex);
             log.error("Se ha producido un error al insertar" + ex.getMessage());

@@ -18,7 +18,7 @@ import org.springframework.batch.core.step.tasklet.Tasklet;
 import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import com.template.dao.impl.CentaxDaoImpl;
+import com.template.dao.impl.ApellidosDaoImpl;
 import com.template.util.Ftp;
 import com.template.util.ZipUtil;
 

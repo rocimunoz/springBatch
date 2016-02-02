@@ -18,7 +18,7 @@ import org.springframework.batch.core.step.tasklet.Tasklet;
 import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import com.template.dao.impl.CentaxDaoImpl;
+import com.template.dao.impl.ApellidosDaoImpl;
 import com.template.util.Ftp;
 import com.template.util.ZipUtil;
 
@@ -27,7 +27,7 @@ import com.template.util.ZipUtil;
  * @author rmpinedo
  */
 /**
- * Step que realiza el borrado de la tabla Centax.Config_Agregacion_Hippeis
+ * Step que realiza el borrado de la tabla Apellidos
  *
  * @author rmpinedo
  */
@@ -36,7 +36,7 @@ public class TaskDeleteBBDD implements Tasklet {
     static Logger log = Logger.getLogger(TaskDeleteBBDD.class);
 
     @Autowired
-    private CentaxDaoImpl centaxDao;
+    private ApellidosDaoImpl apellidosDao;
 
     @Override
     public RepeatStatus execute(StepContribution sc, ChunkContext cc) throws Exception {
@@ -45,7 +45,7 @@ public class TaskDeleteBBDD implements Tasklet {
 
         try {
 
-            centaxDao.deleteBBDD();
+            apellidosDao.deleteBBDD();
             
         } catch (Exception e) {
             log.error("Error borrando la tabla ");

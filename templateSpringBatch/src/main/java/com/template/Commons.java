@@ -38,13 +38,7 @@ public class Commons {
         }
     }
 
-    /**
-     * Se devuelve el valor de la propiedad requerida del fichero definido en
-     * Commons.processProperties
-     *
-     * @param propertyName nombre de la propiedad buscada
-     * @return si el valor es nulo es que no se ha encontrado
-     */
+    
     public static String getProperty(String propertyName) {
         String value = null;
         // Si no se ha cargado el fichero de propiedades, se carga.

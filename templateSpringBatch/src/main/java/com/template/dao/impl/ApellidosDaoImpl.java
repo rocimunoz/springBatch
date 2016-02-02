@@ -13,24 +13,24 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
 import org.springframework.stereotype.Service;
-import com.template.dao.ICentaxDao;
-import com.template.dto.Config_Agregacion_Hippeis;
+import com.template.dao.IApellidosDao;
+import com.template.dto.Apellidos;
 
 /**
  *
  * @author rmpinedo
  */
-@Service("ICentaxDao")
-public class CentaxDaoImpl extends SqlMapClientDaoSupport implements ICentaxDao {
+@Service("IApellidosDao")
+public class ApellidosDaoImpl extends SqlMapClientDaoSupport implements IApellidosDao {
 
     @Autowired
-    public CentaxDaoImpl(@Qualifier("sqlMapClient") SqlMapClient s) {
+    public ApellidosDaoImpl(@Qualifier("sqlMapClient") SqlMapClient s) {
         setSqlMapClient(s);
     }
 
-    public void insertarBeanHippeis(Config_Agregacion_Hippeis config) throws Exception {
+    public void insertarBeanApellidos(Apellidos config) throws Exception {
         SqlMapClientTemplate sqlMapClientTemplate = getSqlMapClientTemplate();
-        sqlMapClientTemplate.insert("insert-Hippeis", config);
+        sqlMapClientTemplate.insert("insert-Apellidos", config);
 
     }
 
@@ -38,14 +38,14 @@ public class CentaxDaoImpl extends SqlMapClientDaoSupport implements ICentaxDao 
 
         int count = 0;
         SqlMapClientTemplate sqlMapClientTemplate = getSqlMapClientTemplate();
-        count = sqlMapClientTemplate.delete("delete-Hippeis");
+        count = sqlMapClientTemplate.delete("delete-Apellidos");
         
         return count;
     }
 
-    public void insertarListaHippeis(HashMap hm) throws Exception {
+    public void insertarListaApellidos(HashMap hm) throws Exception {
         SqlMapClientTemplate sqlMapClientTemplate = getSqlMapClientTemplate();
 
-        sqlMapClientTemplate.insert("insert-ListHippeis", hm);
+        sqlMapClientTemplate.insert("insert-ListApellidos", hm);
     }
 }

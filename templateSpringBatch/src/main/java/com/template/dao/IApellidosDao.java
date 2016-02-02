@@ -6,32 +6,32 @@
 package com.template.dao;
 
 import java.util.HashMap;
-import com.template.dto.Config_Agregacion_Hippeis;
+import com.template.dto.Apellidos;
 
 /**
  *
  * @author rmpinedo
  */
-public interface ICentaxDao {
+public interface IApellidosDao {
 
     /**
-     * Funcion para insertar un objeto en Config_Agregacion_Hippeis
+     * Funcion para insertar un objeto en Apellidos
      *
-     * @param hip Objeto con los datos de Hippeis
+     * @param ap Objeto con los datos de Hippeis
      * @throws Exception
      */
-    public void insertarBeanHippeis(Config_Agregacion_Hippeis hip) throws Exception;
+    public void insertarBeanApellidos(Apellidos ap) throws Exception;
 
     /**
-     * Funcion para insertar una lista de objetos en Config_Agregacion_Hippeis
+     * Funcion para insertar una lista de objetos en Apellidos
      *
      * @param hm. HashMap con la lista de objetos
      * @throws Exception
      */
-    public void insertarListaHippeis(HashMap hm) throws Exception;
+    public void insertarListaApellidos(HashMap hm) throws Exception;
 
     /**
-     * Funcion para borrar la tabla Config_Agregacion_Hippeis al inicio del proceso
+     * Funcion para borrar la tabla Apellidos al inicio del proceso
      *
      * @return numero de registros borrados
      * @throws Exception

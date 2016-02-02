@@ -27,7 +27,7 @@
           http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch-2.1.xsd">
 
     
-    <context:component-scan base-package="eon.gBal"/>
+    <context:component-scan base-package="com.template"/>
    
     
     <!-- CONFIGURACION DE CONEXION CON LA BASE DE DATOS  -->       
@@ -52,11 +52,11 @@
             </value>
         </property>
         <property name="dataSource">
-            <ref bean="dataSourceCSD"/>
+            <ref bean="dataSourceTemplate"/>
         </property>
     </bean>
     
-    <bean id="dataSourceCSD" class="org.apache.commons.dbcp.BasicDataSource"
+    <bean id="dataSourceTemplate" class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close">
         <property name="driverClassName">
             <value>${driver}</value>
@@ -111,23 +111,23 @@
     
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource">
-            <ref bean="dataSourceCSD"/>
+            <ref bean="dataSourceTemplate"/>
         </property>
     </bean>     
     
-    <bean id="CentaxDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <bean id="ApellidosDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
         <property name="transactionManager">
             <ref bean="transactionManager"/>
         </property>
         <property name="target">
-            <ref bean="CentaxDaoImpl"/>
+            <ref bean="ApellidosDaoImpl"/>
         </property>
         <property name="transactionAttributeSource">
             <ref local="defaultTxAttributes"/>
         </property>
     </bean>
                                            
-    <bean id="CentaxDaoImpl" class="com.template.dao.impl.CentaxDaoImpl">
+    <bean id="ApellidosDaoImpl" class="com.template.dao.impl.ApellidosDaoImpl">
         <property name="sqlMapClient">
             <ref local="sqlMapClient"/>
         </property>
@@ -155,8 +155,7 @@
 
 
     <bean id="jobExplorer" class="org.springframework.batch.core.explore.support.JobExplorerFactoryBean">
-       
-        <property name="dataSource" ref="dataSourceCSD"/>
+        <property name="dataSource" ref="dataSourceTempalte"/>
     </bean>
         
         

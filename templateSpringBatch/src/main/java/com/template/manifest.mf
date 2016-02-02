@@ -1,4 +1,4 @@
-Title: Carga de Hippeis en Centax
-Vendor: www.cic-sl.es
-Created-By: Consulting Informatico Cantabria S.L. 2009-2012
+Title: Template ejemplo carga datos SpringBatch
+Vendor: rocimunoz
+Created-By: rocimunoz
 Version: 1.00
