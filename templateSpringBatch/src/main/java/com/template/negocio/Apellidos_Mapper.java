@@ -34,7 +34,7 @@ public class Apellidos_Mapper implements FieldSetMapper<Apellidos> {
 
         try {
 
-            if (fs.getFieldCount() == 28) {
+            if (fs.getFieldCount() == 3) {
 
                 if (fs != null) {
 

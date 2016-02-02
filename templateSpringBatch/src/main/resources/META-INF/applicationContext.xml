@@ -43,6 +43,7 @@
    
     <batch:job id="cargaTemplate" job-repository="jobRepository">    
         
+        <!--
         <batch:step id="AccesoFTP" >
             <batch:tasklet ref="TaskAccesoFTP" transaction-manager="transactionManager"/>
             <batch:next on="*" to="descomprimirFichero" />
@@ -54,7 +55,7 @@
             <batch:next on="DECISOR_FIN" to="fin" />
 
         </batch:decision>
-
+-->
         
         <batch:step id="descomprimirFichero">
             <batch:tasklet ref="TaskDescomprimirFichero"/>

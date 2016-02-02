@@ -41,7 +41,6 @@ public class TaskDeleteFTPFiles implements Tasklet {
     @Value("${dirFTP}")
     private String dirFTP;
 
-
     @Value("${conexionSegura}")
     private String conexionSegura;
 
@@ -54,15 +53,16 @@ public class TaskDeleteFTPFiles implements Tasklet {
 
             log.info("Se realiza conexion al FTP");
             //Conexion al FTP
-            ftp = new Ftp(ip, user, pass, conexionSegura);
-            ftp.conecta();
 
+            //ftp = new Ftp(ip, user, pass, conexionSegura);
+            //ftp.conecta();
             //Listo los ficheros y borro
-            List<String> listaFicheros = ftp.listarCarpeta(dirFTP);
+            //List<String> listaFicheros = ftp.listarCarpeta(dirFTP);
+            /*
             for (String fichero : listaFicheros) {
-                ftp.borrarFichero(dirFTP, fichero);
+                //ftp.borrarFichero(dirFTP, fichero);
                 log.info("Borrado fichero del FTP");
-            }
+            }*/
 
         } catch (Exception e) {
             log.error("El fichero  no se ha podido borrar del FTP." + e.getCause().toString());
@@ -71,7 +71,7 @@ public class TaskDeleteFTPFiles implements Tasklet {
         } finally {
             //Desconecto del FTP
             if (ftp != null) {
-                ftp.desconecta();
+                //ftp.desconecta();
                 log.info("Se realiza desconexion del FTP");
             }
 

@@ -33,7 +33,7 @@
         <iterate property="listaApellidos" open="" conjunction=" union all " close="">
             select 
             #listaApellidos[].id:NUMERIC#,
-            #listaApellidos[].codigo:NUMERIC#,
+            #listaApellidos[].codigo:VARCHAR#,
             #listaApellidos[].nombre:VARCHAR# FROM DUAL
            
         </iterate>
