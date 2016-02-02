@@ -186,9 +186,94 @@
 						<h3>Job</h3>
 						Proceso de ejecución formado por uno o más steps
 					</section>
+					<!-- Job -->
+					<section>
+						<h3>Step</h3>
+						<p>Representación de un lote. </p>
+						<p>Un job está formado por N steps.</p>
+					</section>
 				</section>				
 
-				
+				<!-- Steps especiales: Chunk Oriented-->
+				<section>
+					<section>
+					<h2 align="left"><font color="#e69138">Steps especiales: Chunk Oriented</font></h2>
+					<div align="left">
+							<p>Tecnica de procesamiento orientada a "porciones"</p>
+							<p>El reader lee una porción de datos, el processor los procesa
+							y en el writer se envian a BBDD</p>
+							<p>Cada porción o chunk se gestiona en transacciones independientes</p>
+							
+							
+					
+					</div>	<img align="center" data-src="img/chunk.png" alt="Spring">
+					</section>
+					<section><h3>ItemReader</h3>
+					<div align=left>
+					<p>Hay itemReaders definidos por Spring</p>
+					<ul>
+						<li>FlatFileItemReader: el recurso es un fichero</li>
+						<li>ListItemReader: el recurso es una lista</li>
+						<li>MongoItemReader: el recurso es una query en Mongo</li>
+					</ul>
+					<p>Podemos definir nuestro propio Reader</p>
+					
+					</div>
+					</section>
+					<section><h3>ItemProcessor</h3>
+					<div align=left>
+					<p>No es obligatorio usarlo</p>
+					
+					<p>Permite tratar los datos recibidos por el Reader</p>
+					
+					</div>
+
+					</section>
+					<section><h3>ItemWriter</h3>
+					<div align=left>
+					<p>Guarda la informacion leida por el Reader y tratada por el processor</p>
+					
+					<p>commit-interval: tamaño de la porción a tratar</p>
+					
+					</div>
+					</section>
+				</section>
+
+				<section>
+					<section>
+					<h2 align="left"><font color="#e69138">Workflow de Steps</font></h2>
+					<div align="left"><p>Ejemplo de step condicional</p>
+					<pre>
+					<code class="hljs" data-trim contenteditable>
+<batch:step id="stepA">
+    <batch:tasklet ref="TaskStepA"></batch:tasklet>
+    <batch:next on="*" to="stepB"></batch:next>
+    <batch:next on="FAILED" to="stepC"></batch:next>
+</batch:step>
+					</code></pre></div>
+					<img src="img/workflow.png">
+					</section>
+				</section>
+
+				<!-- Gestion de fallos-->
+				<section>
+					<h2 align="left"><font color="#e69138">Gestion de fallos</font></h2>
+					<div align="left">
+					<p>Podemos configurar los steps y sus rollbacks</p>
+						<p>Si se produce una excepcion de tipo ValidationException, no se hará rollback</p>
+						<pre>
+					<code class="hljs" data-trim contenteditable>
+<batch:step id="step1">
+   <batch:tasklet>
+      <chunk reader="itemReader" writer="itemWriter" commit-interval="2"/>
+      <no-rollback-exception-classes>
+         <include class="org.springframework.batch.item.validator.ValidationException"/>
+      </no-rollback-exception-classes>
+   </batch:tasklet>
+</batch:step>
+					</code></pre>
+					</div>
+					</section>
 
 			</div>
 
