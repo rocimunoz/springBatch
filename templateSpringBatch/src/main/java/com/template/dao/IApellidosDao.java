@@ -17,7 +17,7 @@ public interface IApellidosDao {
     /**
      * Funcion para insertar un objeto en Apellidos
      *
-     * @param ap Objeto con los datos de Hippeis
+     * @param ap Objeto con los datos de Apellidos
      * @throws Exception
      */
     public void insertarBeanApellidos(Apellidos ap) throws Exception;

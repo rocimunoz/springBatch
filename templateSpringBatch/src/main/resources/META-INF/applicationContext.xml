@@ -64,7 +64,7 @@
         
         <batch:step id="deleteBBDD" >
             <batch:tasklet ref="TaskDeleteBBDD" transaction-manager="transactionManager"/>
-            <batch:next on="*" to="insertaCSD" />
+            <batch:next on="*" to="insertaTemplate" />
             <batch:next on="FAILED" to="fin" />
         </batch:step>
         
@@ -173,8 +173,8 @@
 	
     </bean>
     
-    <!-- Clase que mapea la linea del fichero a objeto Hippeis -->
-    <bean id="fieldSetMapper" class="com.template.negocio.Config_Agregacion_Hippeis_Mapper"/>
+    <!-- Clase que mapea la linea del fichero a objeto Apellidos -->
+    <bean id="fieldSetMapper" class="com.template.negocio.Apellidos_Mapper"/>
     
     <bean id="itemWriter" class="com.template.negocio.ServicioWriter">    
        

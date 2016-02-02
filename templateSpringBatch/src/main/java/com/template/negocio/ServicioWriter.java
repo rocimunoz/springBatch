@@ -4,6 +4,7 @@
  */
 package com.template.negocio;
 
+import com.template.dao.IApellidosDao;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -18,6 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import com.template.dao.impl.ApellidosDaoImpl;
 import com.template.dto.Apellidos;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 /**
  *
@@ -28,7 +30,8 @@ public class ServicioWriter implements ItemWriter<Apellidos> {
     private static Logger log = Logger.getLogger(ServicioWriter.class);
 
     @Autowired
-    private ApellidosDaoImpl apellidosDao;
+     @Qualifier("IApellidosDao")
+    private IApellidosDao apellidosDao;
 
     /**
      * Variable contador de lineas del fichero. Tiene scope singleton
@@ -50,24 +53,24 @@ public class ServicioWriter implements ItemWriter<Apellidos> {
             }
             contadorPuntosTraspasados = contadorPuntosTraspasados + list.size();
 
-            List<Apellidos> listaHippeis = new ArrayList<Apellidos>();
+            List<Apellidos> listaApellidos = new ArrayList<Apellidos>();
 
             log.info("Insertados " + list.size() + " registros de " + contadorPuntosTraspasados);
 
             if (list != null && !list.isEmpty()) {
 
-                for (Apellidos hippeis : list) {
+                for (Apellidos apellido : list) {
 
-                    listaHippeis.add(hippeis);
+                    listaApellidos.add(apellido);
 
                 }
 
                 //Se realiza una insercion de una lista por temas de rendimiento
-                insertarLista(listaHippeis);
+                insertarLista(listaApellidos);
             }
 
             //Se limpia el objeto para la siguiente ejecucion. Tiene scope singleton
-            listaHippeis.clear();
+            listaApellidos.clear();
         } catch (Exception e) {
             log.error("Se ha producido un error insertando");
         }
@@ -77,12 +80,12 @@ public class ServicioWriter implements ItemWriter<Apellidos> {
     /**
      * Insercion de un objeto Apellidos
      *
-     * @param hippeis
+     * @param apellidos
      */
-    private void insertarObjeto(Apellidos hippeis) {
+    private void insertarObjeto(Apellidos apellidos) {
 
         try {
-            apellidosDao.insertarBeanApellidos(hippeis);
+            apellidosDao.insertarBeanApellidos(apellidos);
         } catch (Exception ex) {
             java.util.logging.Logger.getLogger(ServicioWriter.class.getName()).log(Level.SEVERE, null, ex);
             log.error("Se ha producido un error al insertar" + ex.getMessage());

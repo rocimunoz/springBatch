@@ -155,7 +155,7 @@
 
 
     <bean id="jobExplorer" class="org.springframework.batch.core.explore.support.JobExplorerFactoryBean">
-        <property name="dataSource" ref="dataSourceTempalte"/>
+        <property name="dataSource" ref="dataSourceTemplate"/>
     </bean>
         
         

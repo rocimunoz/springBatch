@@ -4,6 +4,7 @@
  */
 package com.template.negocio;
 
+import com.template.dao.IApellidosDao;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileFilter;
@@ -21,6 +22,7 @@ import org.springframework.beans.factory.annotation.Value;
 import com.template.dao.impl.ApellidosDaoImpl;
 import com.template.util.Ftp;
 import com.template.util.ZipUtil;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 /**
  *
@@ -36,7 +38,8 @@ public class TaskDeleteBBDD implements Tasklet {
     static Logger log = Logger.getLogger(TaskDeleteBBDD.class);
 
     @Autowired
-    private ApellidosDaoImpl apellidosDao;
+    @Qualifier("IApellidosDao")
+    private IApellidosDao apellidosDao;
 
     @Override
     public RepeatStatus execute(StepContribution sc, ChunkContext cc) throws Exception {
