@@ -175,22 +175,50 @@
 					<section>
 						<h3>Job Repository</h3>
 						Almacena en tiempo de ejecución información sobre los jobs
+						
+					<pre><code class="xml" data-trim contenteditable style="font-size: 18px;height:200px">
+<bean id="jobRepository" class="...MapJobRepositoryFactoryBean">
+	<property 
+			name="transactionManager" 
+			ref="JobTransactionManager">
+	</property>
+</bean>
+</code></pre>
 					</section>
 					<!-- JobLauncher -->
 					<section>
 						<h3>Job Launcher</h3>
 						Responsable de ejecutar cada uno de los jobs
+					<pre><code class="xml" data-trim contenteditable style="font-size: 18px;height:200px">
+<bean id="jobLauncher" 
+	  class="...SimpleJobLauncher">
+      <property name="jobRepository" ref="jobRepository"></property>
+</bean>
+					</code></pre>
 					</section>
 					<!-- Job -->
 					<section>
 						<h3>Job</h3>
 						Proceso de ejecución formado por uno o más steps
+						<pre>
+					<code class="xml" data-trim contenteditable style="font-size: 18px;height:200px">
+<batch:job id="nombreJob" job-repository="jobRepository"> 
+...
+</batch:job>
+</code></pre>
 					</section>
-					<!-- Job -->
+					<!-- Step -->
 					<section>
 						<h3>Step</h3>
 						<p>Representación de un lote. </p>
 						<p>Un job está formado por N steps.</p>
+<pre>
+					<code class="xml" data-trim contenteditable style="font-size: 18px;height:200px">
+<batch:step id="AccesoFTP" >
+   <batch:tasklet ref="TaskAccesoFTP" transaction-manager="transactionManager"></batch:tasklet>
+   <batch:next on="*" to="descomprimirFichero"></batch:next>        
+</batch:step>
+</code></pre>
 					</section>
 				</section>				
 
@@ -233,8 +261,18 @@
 					<div align=left>
 					<p>Guarda la informacion leida por el Reader y tratada por el processor</p>
 					
-					<p>commit-interval: tamaño de la porción a tratar</p>
-					
+					<p><u>* commit-interval</u>: tamaño de la porción a tratar</p>
+					<pre>
+					<code class="xml" data-trim contenteditable style="font-size: 18px;height:200px">
+<batch:step id="insertaTemplate" next="deleteFTPFiles" >        
+   <batch:tasklet transaction-manager="transactionManager" task-executor="taskExecutor">
+       <batch:chunk    reader="itemReader"
+                       writer="itemWriter"
+                       commit-interval="${commitInterval}">
+       </batch:chunk>
+   </batch:tasklet>
+</batch:step>
+					</code></pre>
 					</div>
 					</section>
 				</section>
@@ -242,7 +280,7 @@
 				<section>
 					<section>
 					<h2 align="left"><font color="#e69138">Workflow de Steps</font></h2>
-					<div align="left"><p>Ejemplo de step condicional</p>
+					<div align="left"><h3>Ejemplo de step condicional</h3>
 					<pre>
 					<code class="hljs" data-trim contenteditable>
 <batch:step id="stepA">
@@ -253,6 +291,7 @@
 					</code></pre></div>
 					<img src="img/workflow.png">
 					</section>
+					
 				</section>
 
 				<!-- Gestion de fallos-->
@@ -265,14 +304,23 @@
 					<code class="hljs" data-trim contenteditable>
 <batch:step id="step1">
    <batch:tasklet>
-      <chunk reader="itemReader" writer="itemWriter" commit-interval="2"/>
+      <chunk reader="itemReader" writer="itemWriter" commit-interval="2"></chunk>
       <no-rollback-exception-classes>
-         <include class="org.springframework.batch.item.validator.ValidationException"/>
+         <include class="org.springframework.batch.item.validator.ValidationException"></include>
       </no-rollback-exception-classes>
    </batch:tasklet>
 </batch:step>
 					</code></pre>
 					</div>
+					</section>
+					<section>
+						<h2 align="left"><font color="#e69138">Gestion de transacciones</font></h2>
+					<div align="left">
+					<ul><li><b>PROPAGATION_REQUIRED:</b> <br/>soporte a la transaccion actual. Crea una nueva si no existe. </li>
+					<li><b>PROPAGATION_REQUIRES_NEW:</b> <br/>crea una nueva transaccion suspendiendo la anterior en caso de existir.
+					<li> <b>PROPAGATION_SUPPORTS:</b> <br/>soporte a la transaccion actual. Si no existe transaccion, no existe una nueva</li>	
+					<li> <b>ISOLATION_DEFAULT:</b> <br/>Utiliza la configuracion por defecto del datastore</li>
+</ul>
 					</section>
 
 			</div>
