@@ -43,7 +43,7 @@
    
     <batch:job id="cargaTemplate" job-repository="jobRepository">    
         
-        <!--
+        
         <batch:step id="AccesoFTP" >
             <batch:tasklet ref="TaskAccesoFTP" transaction-manager="transactionManager"/>
             <batch:next on="*" to="descomprimirFichero" />
@@ -55,7 +55,7 @@
             <batch:next on="DECISOR_FIN" to="fin" />
 
         </batch:decision>
--->
+
         
         <batch:step id="descomprimirFichero">
             <batch:tasklet ref="TaskDescomprimirFichero"/>
@@ -135,19 +135,21 @@
     <bean id="itemReader" class="org.springframework.batch.item.file.MultiResourceItemReader">
         <!--<bean id="itemReader" class="org.springframework.batch.item.file.MultiResourceItemReader">-->
         <property name="resources">
-            <value>file:./ficheros/*.csv</value>
+           <value>file:./ficheros/extraccion_apellidos_ine.csv</value>  
         </property>
+        
         <property name="strict" value="false"/>
         <!--<property name="resources" value="classpath:${dirLocal}*.csv" />-->
         <!--<property name="resources" value="classpath:${dirLocal}*.csv" />-->
         
         <!--<property name="resources" value="ficheros/*" />-->
-        <!--<property name="resources" value="${dirLocal}*.csv" /> OK-->
+        <!--<property name="resources" value="${dirLocal}*.csv" />-->
+        
         <!--
         <property name="resources">
             <value>./ficheros/*.csv</value>
-        </property>
-        -->
+        </property>-->
+        
 
         
         <property name="delegate" ref="FlatFileItemReader" />
