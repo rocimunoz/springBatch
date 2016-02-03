@@ -30,7 +30,7 @@ public class ServicioWriter implements ItemWriter<Apellidos> {
     private static Logger log = Logger.getLogger(ServicioWriter.class);
 
     @Autowired
-     @Qualifier("IApellidosDao")
+    @Qualifier("IApellidosDao")
     private IApellidosDao apellidosDao;
 
     /**
@@ -61,7 +61,9 @@ public class ServicioWriter implements ItemWriter<Apellidos> {
 
                 for (Apellidos apellido : list) {
 
-                    listaApellidos.add(apellido);
+                    if (apellido.getId() != null) {
+                        listaApellidos.add(apellido);
+                    }
 
                 }
 

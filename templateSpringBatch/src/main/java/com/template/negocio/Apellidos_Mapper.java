@@ -34,14 +34,14 @@ public class Apellidos_Mapper implements FieldSetMapper<Apellidos> {
 
         try {
 
-            if (fs.getFieldCount() == 3) {
+            if (fs.getFieldCount() == 5) {
 
                 if (fs != null) {
 
                     if (fs.readString("ID") != null && !fs.readString("ID").equals("")) {
                         bean.setId(Long.parseLong(fs.readString("ID")));
                     } else {
-                        bean.setId(null);
+                        bean.setId(new Long(0));
                     }
                     bean.setCodigo(fs.readString("CODIGO"));
                     bean.setNombre(fs.readString("NOMBRE"));
