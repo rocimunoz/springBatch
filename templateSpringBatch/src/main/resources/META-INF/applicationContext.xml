@@ -28,9 +28,6 @@
 
     
     <context:component-scan base-package="com.template"/>
-    <!--<context:annotation-config/>-->
-
-    <!--<bean id="listaPcPendientes" class="java.util.concurrent.ConcurrentLinkedQueue" scope="singleton" />-->
    
     <!--
         Un ejecutador de tareas. A través de esta clase es que se inicia la
@@ -42,7 +39,6 @@
        
    
     <batch:job id="cargaTemplate" job-repository="jobRepository">    
-        
         
         <batch:step id="AccesoFTP" >
             <batch:tasklet ref="TaskAccesoFTP" transaction-manager="transactionManager"/>
@@ -56,7 +52,6 @@
 
         </batch:decision>
 
-        
         <batch:step id="descomprimirFichero">
             <batch:tasklet ref="TaskDescomprimirFichero"/>
             <batch:next on="*" to="deleteBBDD" />
@@ -68,8 +63,6 @@
             <batch:next on="*" to="insertaTemplate" />
             <batch:next on="FAILED" to="fin" />
         </batch:step>
-        
-        
           
         <batch:step id="insertaTemplate" next="deleteFTPFiles" >        
             <batch:tasklet transaction-manager="transactionManager" task-executor="taskExecutor">

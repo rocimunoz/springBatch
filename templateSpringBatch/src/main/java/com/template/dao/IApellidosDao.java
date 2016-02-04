@@ -15,7 +15,7 @@ import com.template.dto.Apellidos;
 public interface IApellidosDao {
 
     /**
-     * Funcion para insertar un objeto en Apellidos
+     * Funcion para insertar un objeto Apellidos
      *
      * @param ap Objeto con los datos de Apellidos
      * @throws Exception
@@ -23,7 +23,7 @@ public interface IApellidosDao {
     public void insertarBeanApellidos(Apellidos ap) throws Exception;
 
     /**
-     * Funcion para insertar una lista de objetos en Apellidos
+     * Funcion para insertar una lista de objetos  Apellidos
      *
      * @param hm. HashMap con la lista de objetos
      * @throws Exception

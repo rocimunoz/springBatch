@@ -4,7 +4,6 @@
  */
 package com.template;
 
-
 import org.apache.commons.logging.LogFactory;
 import org.apache.log4j.Logger;
 import org.springframework.batch.core.Job;
@@ -36,7 +35,7 @@ public class Inicio {
             try {
 
                 LogFactory.getFactory().getInstance(Inicio.class).info(Commons.VERSION);
-               
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -55,7 +54,7 @@ public class Inicio {
         log.info("---- Fin proceso " + Commons.VERSION + " ----");
         long end = System.currentTimeMillis();
         log.info("- Ejecutado en " + Commons.getTimeDifference(start, end));
-        //log.info("--- Finalizado proceso");
+
         if (Commons.levelError == 0) {
             log.info("---- ULTIMALINEAPROCESO CargadorTemplate BIEN");
         } else {

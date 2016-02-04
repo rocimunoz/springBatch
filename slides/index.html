@@ -44,12 +44,12 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					
 					<h3>Procesamiento de datos con</h3>
 					<h1><font color="#e69138">SpringBatch</font></h1>
 					<p>
 						<small><a href="http://www.coderscantabria.com">Coders Cantabria</a> / <a href="http://twitter.com/roci_munoz">@roci_munoz</a></small>
 					</p>
+					<p><small><a href="https://github.com/rocimunoz/springBatch">Github: rocimunoz/springBatch</a></small></p>
 				</section>
 
 
@@ -106,9 +106,6 @@
 						<p>¿Qué cantidad de datos voy a tener que gestionar?</p>
 						<p>Ante un fallo, ¿hago rollback? ¿persisto los datos?</p>
 						<p>¿Hasta donde hago rollback?</p>
-
-
-
 						
 					</div>
 					</section>
@@ -301,7 +298,7 @@
 					<p>Podemos configurar los steps y sus rollbacks</p>
 						<p>Si se produce una excepcion de tipo ValidationException, no se hará rollback</p>
 						<pre>
-					<code class="hljs" data-trim contenteditable>
+					<code class="xml" data-trim contenteditable>
 <batch:step id="step1">
    <batch:tasklet>
       <chunk reader="itemReader" writer="itemWriter" commit-interval="2"></chunk>
@@ -313,6 +310,7 @@
 					</code></pre>
 					</div>
 					</section>
+					<!-- Gestion de Transacciones-->
 					<section>
 						<h2 align="left"><font color="#e69138">Gestion de transacciones</font></h2>
 					<div align="left">
@@ -322,6 +320,37 @@
 					<li> <b>ISOLATION_DEFAULT:</b> <br/>Utiliza la configuracion por defecto del datastore</li>
 </ul>
 					</section>
+
+					<section>
+					   <h2 align="left"><font color="#e69138">Gestion de hilos</font></h2>
+					   <p>
+					   	corePoolSize: Tamaño de hilos del proceso batch
+
+					   </p>	
+<pre>
+					<code class="xml" data-trim contenteditable>
+<bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+    <property name="corePoolSize" value="${corePoolSize}" />
+    <property name="maxPoolSize"  value="${maxPoolSize}" />
+</bean>
+					</code></pre>						
+					</section>
+
+					<!-- Demo -->
+					<section>
+						<h2 align="left"><font color="#e69138">Demo</font></h2>
+						<img src="img/codersDemo.png" width="400px" heigth="250px"/>
+					</section>
+					<!-- Conclusiones -->
+					<section>
+						<h2 align="left"><font color="#e69138">Conclusiones</font></h2>
+						<ul><li>Framework muy robusto para procesamiento batch</li>
+						<li>Abstrae de muchas tareas complejas al desarrollador</li>
+						<li>Muy escalable para adaptarlo a cualquier proceso</li>
+						<li><font color="red">No es facil detectar errores</font></li>
+						<li><font color="red">Comportamientos no deseables si no configuras bien</font></li>
+					</section>
+
 
 			</div>
 

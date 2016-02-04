@@ -15,12 +15,9 @@ import org.apache.log4j.Logger;
 public class Commons {
 
     static Logger log = Logger.getLogger(Commons.class);
-    // Constantes
-    // Version del aplicativo
+   
     public static String VERSION = "templateSpringBatch v01.00 (29/10/2015)";
-//    public final static String LOG_CONFIG = "config/template/cfg/log4j.properties";
-    // Ubicacion de la configuracion de los owners de las sentencias sql
-    // (fichero properties)   
+
     public final static String INI_CONFIG = "config/template/cfg/prj.properties";
     // Ubicacion de la configuracion de hibernate (fichero properties)
     public static String SQL_MAP_CONFIG = "ibatis/SqlMapConfig.xml";

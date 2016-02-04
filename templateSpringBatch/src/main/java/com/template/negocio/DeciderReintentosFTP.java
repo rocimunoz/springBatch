@@ -17,6 +17,12 @@ import org.springframework.beans.factory.annotation.Autowired;
  *
  * @author rmpinedo
  */
+
+    /**
+     * Clase para realizar varios reintentos sobre la conexion FTP
+     * Se dirige la ejecucion de los steps con el objeto FlowExecutionStatus
+     */
+
 public class DeciderReintentosFTP implements JobExecutionDecider {
 
     
@@ -26,7 +32,7 @@ public class DeciderReintentosFTP implements JobExecutionDecider {
 
     public FlowExecutionStatus decide(JobExecution je, StepExecution se) {
 
-        
+     
         
         if (reintentosFTP <=3) {
 
