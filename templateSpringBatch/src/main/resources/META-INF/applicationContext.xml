@@ -74,6 +74,7 @@
         <batch:step id="insertaTemplate" next="deleteFTPFiles" >        
             <batch:tasklet transaction-manager="transactionManager" task-executor="taskExecutor">
                 <batch:chunk    reader="itemReader"
+                                processor="itemProcessor"
                                 writer="itemWriter"
                                 commit-interval="${commitInterval}"
                 />
@@ -98,46 +99,33 @@
        
     </batch:job>
           
-    <bean id="DeciderReintentosFTP" class="com.template.negocio.DeciderReintentosFTP">
+    <bean id="DeciderReintentosFTP" class="com.template.negocio.DeciderReintentosFTP"/>
         
-    </bean>
-    
     <bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
         <property name="corePoolSize" value="${corePoolSize}" />
         <property name="maxPoolSize"  value="${maxPoolSize}" />
     </bean>
       
     <!-- Tarea de borrado de tablas -->  
-    <bean id="TaskDeleteBBDD" class="com.template.negocio.TaskDeleteBBDD">            
-       
-    </bean>
+    <bean id="TaskDeleteBBDD" class="com.template.negocio.TaskDeleteBBDD"/>            
     
     <!-- Tarea de borrado ficheros locales -->  
-    <bean id="TaskDeleteLocalFiles" class="com.template.negocio.TaskDeleteLocalFiles">            
-       
-    </bean>
+    <bean id="TaskDeleteLocalFiles" class="com.template.negocio.TaskDeleteLocalFiles" />            
       
-    <bean id="TaskDeleteFTPFiles" class="com.template.negocio.TaskDeleteFTPFiles">            
-       
-    </bean>   
+    <bean id="TaskDeleteFTPFiles" class="com.template.negocio.TaskDeleteFTPFiles" />            
       
     <!-- Tarea de Acceso al FTP -->  
-    <bean id="TaskAccesoFTP" class="com.template.negocio.TaskAccesoFTP">            
-       
-    </bean>
+    <bean id="TaskAccesoFTP" class="com.template.negocio.TaskAccesoFTP"/>            
     
     <!-- Tarea para descomprimir el fichero en una ruta local -->
-    <bean id="TaskDescomprimirFichero" class="com.template.negocio.TaskUnzipFiles">            
-       
-    </bean>
+    <bean id="TaskDescomprimirFichero" class="com.template.negocio.TaskUnzipFiles"/>            
                          
     
     <bean id="itemReader" class="org.springframework.batch.item.file.MultiResourceItemReader">
-        <!--<bean id="itemReader" class="org.springframework.batch.item.file.MultiResourceItemReader">-->
         <property name="resources">
-           <value>file:./ficheros/extraccion_apellidos_ine.csv</value>  
+            <value>file:./ficheros/extraccion_apellidos_ine.csv</value>  
         </property>
-        
+        <property name="delegate" ref="FlatFileItemReader" />
         <property name="strict" value="false"/>
         <!--<property name="resources" value="classpath:${dirLocal}*.csv" />-->
         <!--<property name="resources" value="classpath:${dirLocal}*.csv" />-->
@@ -149,10 +137,6 @@
         <property name="resources">
             <value>./ficheros/*.csv</value>
         </property>-->
-        
-
-        
-        <property name="delegate" ref="FlatFileItemReader" />
     </bean>
     
     
@@ -172,16 +156,15 @@
             </bean>
         </property>
        
-        
-	
     </bean>
     
     <!-- Clase que mapea la linea del fichero a objeto Apellidos -->
     <bean id="fieldSetMapper" class="com.template.negocio.Apellidos_Mapper"/>
     
-    <bean id="itemWriter" class="com.template.negocio.ServicioWriter">    
+    <bean id="itemWriter" class="com.template.negocio.ServicioWriter"/>    
+    <bean id="itemProcessor" class="com.template.negocio.ServicioProcess">    
        
-    </bean>    
+    </bean>      
        
     <bean id="finTasklet" class="com.template.negocio.TaskFin">
     </bean>    

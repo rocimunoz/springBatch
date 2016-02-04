@@ -46,6 +46,8 @@ public class ServicioWriter implements ItemWriter<Apellidos> {
      */
     public void write(List<? extends Apellidos> list) throws Exception {
 
+        log.info("**** COMIENZO EL WRITER ****");
+
         try {
 
             if (contadorPuntosTraspasados == null) {
@@ -55,8 +57,6 @@ public class ServicioWriter implements ItemWriter<Apellidos> {
 
             List<Apellidos> listaApellidos = new ArrayList<Apellidos>();
 
-            log.info("Insertados " + list.size() + " registros de " + contadorPuntosTraspasados);
-
             if (list != null && !list.isEmpty()) {
 
                 for (Apellidos apellido : list) {
@@ -64,11 +64,16 @@ public class ServicioWriter implements ItemWriter<Apellidos> {
                     if (apellido.getId() != null) {
                         listaApellidos.add(apellido);
                     }
-
                 }
 
                 //Se realiza una insercion de una lista por temas de rendimiento
-                insertarLista(listaApellidos);
+                if (!listaApellidos.isEmpty()) {
+                    log.info("Insertados " + listaApellidos.size() + " registros de " + contadorPuntosTraspasados);
+                    insertarLista(listaApellidos);
+                } else {
+                    log.info("No hay apellidos a insertar");
+                }
+
             }
 
             //Se limpia el objeto para la siguiente ejecucion. Tiene scope singleton

@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author rmpinedo
  */
-public class Apellidos {
+public class Apellidos implements Cloneable{
     
     private Long id;
     private String nombre;
@@ -39,6 +39,11 @@ public class Apellidos {
 
     public void setCodigo(String codigo) {
         this.codigo = codigo;
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone(); //To change body of generated methods, choose Tools | Templates.
     }
     
   
